@@ -85,4 +85,48 @@ Public Class DatabaseFunctions
         End Try
     End Function
 
+    Public Function GetUserIDByUsername(username As String) As Integer
+        Dim userID As Integer = 0
+        Dim query As String = "SELECT id FROM users WHERE username = @username"
+
+        Try
+            conn.Open()
+            Dim cmd As New MySqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@username", username)
+            Dim result As Object = cmd.ExecuteScalar()
+
+            If result IsNot Nothing Then
+                userID = Convert.ToInt32(result)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+
+        Return userID
+    End Function
+    Public Function AuthenticateAndGetUserID(username As String, password As String) As Integer
+        Dim userID As Integer = 0
+        Dim query As String = "SELECT id FROM users WHERE username = @username AND password = @password"
+
+        Try
+            conn.Open()
+            Dim cmd As New MySqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@username", username)
+            cmd.Parameters.AddWithValue("@password", password)
+            Dim result As Object = cmd.ExecuteScalar()
+
+            If result IsNot Nothing Then
+                userID = Convert.ToInt32(result)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+
+        Return userID
+    End Function
+
 End Class

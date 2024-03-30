@@ -36,8 +36,8 @@ Partial Class LandingPage
         PictureBox1 = New PictureBox()
         Panel2 = New Panel()
         ExitButton = New Button()
-        Button4 = New Button()
-        Button3 = New Button()
+        EndShiftButton = New Button()
+        StartShiftButton = New Button()
         StartPanel = New Panel()
         Label3 = New Label()
         EndPanel = New Panel()
@@ -48,11 +48,21 @@ Partial Class LandingPage
         Button1 = New Button()
         Panel13 = New Panel()
         PanelB = New Panel()
+        DailyHours = New Label()
+        Label8 = New Label()
         PanelC = New Panel()
+        Label11 = New Label()
+        MonthlyHours = New Label()
+        Label9 = New Label()
         CDMPic = New PictureBox()
         PanelA = New Panel()
         Panel15 = New Panel()
         TopPanel = New Panel()
+        EndingMinutesTime = New ComboBox()
+        EndingHourtime = New ComboBox()
+        OpeningMinutesTime = New ComboBox()
+        OpeningHourTime = New ComboBox()
+        Label10 = New Label()
         Panel3 = New Panel()
         Label7 = New Label()
         Label6 = New Label()
@@ -68,6 +78,8 @@ Partial Class LandingPage
         EndPanel.SuspendLayout()
         NamePanel.SuspendLayout()
         Panel13.SuspendLayout()
+        PanelB.SuspendLayout()
+        PanelC.SuspendLayout()
         CType(CDMPic, ComponentModel.ISupportInitialize).BeginInit()
         TopPanel.SuspendLayout()
         Panel3.SuspendLayout()
@@ -123,7 +135,7 @@ Partial Class LandingPage
         Button8.Name = "Button8"
         Button8.Size = New Size(214, 41)
         Button8.TabIndex = 4
-        Button8.Text = "Sumarry Report"
+        Button8.Text = "Summary Report"
         Button8.UseVisualStyleBackColor = False
         ' 
         ' Button7
@@ -210,8 +222,8 @@ Partial Class LandingPage
         ' Panel2
         ' 
         Panel2.Controls.Add(ExitButton)
-        Panel2.Controls.Add(Button4)
-        Panel2.Controls.Add(Button3)
+        Panel2.Controls.Add(EndShiftButton)
+        Panel2.Controls.Add(StartShiftButton)
         Panel2.Controls.Add(StartPanel)
         Panel2.Controls.Add(EndPanel)
         Panel2.Controls.Add(NamePanel)
@@ -226,9 +238,9 @@ Partial Class LandingPage
         ' 
         ' ExitButton
         ' 
-        ExitButton.BackColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
+        ExitButton.BackColor = Color.White
         ExitButton.FlatStyle = FlatStyle.Flat
-        ExitButton.ForeColor = Color.White
+        ExitButton.ForeColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
         ExitButton.Location = New Point(963, 7)
         ExitButton.Name = "ExitButton"
         ExitButton.Size = New Size(25, 23)
@@ -236,23 +248,23 @@ Partial Class LandingPage
         ExitButton.Text = "X"
         ExitButton.UseVisualStyleBackColor = False
         ' 
-        ' Button4
+        ' EndShiftButton
         ' 
-        Button4.Image = CType(resources.GetObject("Button4.Image"), Image)
-        Button4.Location = New Point(247, 35)
-        Button4.Name = "Button4"
-        Button4.Size = New Size(83, 41)
-        Button4.TabIndex = 6
-        Button4.UseVisualStyleBackColor = True
+        EndShiftButton.Image = CType(resources.GetObject("EndShiftButton.Image"), Image)
+        EndShiftButton.Location = New Point(247, 35)
+        EndShiftButton.Name = "EndShiftButton"
+        EndShiftButton.Size = New Size(83, 41)
+        EndShiftButton.TabIndex = 6
+        EndShiftButton.UseVisualStyleBackColor = True
         ' 
-        ' Button3
+        ' StartShiftButton
         ' 
-        Button3.Image = CType(resources.GetObject("Button3.Image"), Image)
-        Button3.Location = New Point(14, 36)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(83, 41)
-        Button3.TabIndex = 5
-        Button3.UseVisualStyleBackColor = True
+        StartShiftButton.Image = CType(resources.GetObject("StartShiftButton.Image"), Image)
+        StartShiftButton.Location = New Point(14, 36)
+        StartShiftButton.Name = "StartShiftButton"
+        StartShiftButton.Size = New Size(83, 41)
+        StartShiftButton.TabIndex = 5
+        StartShiftButton.UseVisualStyleBackColor = True
         ' 
         ' StartPanel
         ' 
@@ -353,18 +365,76 @@ Partial Class LandingPage
         ' PanelB
         ' 
         PanelB.BackColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
+        PanelB.Controls.Add(DailyHours)
+        PanelB.Controls.Add(Label8)
         PanelB.Location = New Point(327, 174)
         PanelB.Name = "PanelB"
         PanelB.Size = New Size(313, 154)
         PanelB.TabIndex = 4
         ' 
+        ' DailyHours
+        ' 
+        DailyHours.AutoSize = True
+        DailyHours.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        DailyHours.ForeColor = Color.White
+        DailyHours.Location = New Point(17, 65)
+        DailyHours.Name = "DailyHours"
+        DailyHours.Size = New Size(0, 18)
+        DailyHours.TabIndex = 1
+        ' 
+        ' Label8
+        ' 
+        Label8.AutoSize = True
+        Label8.Font = New Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label8.ForeColor = Color.White
+        Label8.Location = New Point(14, 13)
+        Label8.Name = "Label8"
+        Label8.Size = New Size(180, 18)
+        Label8.TabIndex = 0
+        Label8.Text = "Hours worked today:"
+        ' 
         ' PanelC
         ' 
         PanelC.BackColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
+        PanelC.Controls.Add(Label11)
+        PanelC.Controls.Add(MonthlyHours)
+        PanelC.Controls.Add(Label9)
         PanelC.Location = New Point(646, 174)
         PanelC.Name = "PanelC"
         PanelC.Size = New Size(310, 154)
         PanelC.TabIndex = 3
+        ' 
+        ' Label11
+        ' 
+        Label11.AutoSize = True
+        Label11.Font = New Font("Verdana", 9.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label11.ForeColor = Color.White
+        Label11.Location = New Point(16, 65)
+        Label11.Name = "Label11"
+        Label11.Size = New Size(64, 16)
+        Label11.TabIndex = 3
+        Label11.Text = "Label11"
+        ' 
+        ' MonthlyHours
+        ' 
+        MonthlyHours.AutoSize = True
+        MonthlyHours.Font = New Font("Verdana", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        MonthlyHours.ForeColor = Color.White
+        MonthlyHours.Location = New Point(16, 65)
+        MonthlyHours.Name = "MonthlyHours"
+        MonthlyHours.Size = New Size(0, 18)
+        MonthlyHours.TabIndex = 2
+        ' 
+        ' Label9
+        ' 
+        Label9.AutoSize = True
+        Label9.Font = New Font("Verdana", 11.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label9.ForeColor = Color.White
+        Label9.Location = New Point(16, 13)
+        Label9.Name = "Label9"
+        Label9.Size = New Size(243, 18)
+        Label9.TabIndex = 1
+        Label9.Text = "Monthly worked hour report:"
         ' 
         ' CDMPic
         ' 
@@ -395,6 +465,11 @@ Partial Class LandingPage
         ' TopPanel
         ' 
         TopPanel.BackColor = SystemColors.ActiveBorder
+        TopPanel.Controls.Add(EndingMinutesTime)
+        TopPanel.Controls.Add(EndingHourtime)
+        TopPanel.Controls.Add(OpeningMinutesTime)
+        TopPanel.Controls.Add(OpeningHourTime)
+        TopPanel.Controls.Add(Label10)
         TopPanel.Controls.Add(Panel3)
         TopPanel.Controls.Add(Label5)
         TopPanel.Controls.Add(Label4)
@@ -404,6 +479,61 @@ Partial Class LandingPage
         TopPanel.Name = "TopPanel"
         TopPanel.Size = New Size(969, 131)
         TopPanel.TabIndex = 0
+        ' 
+        ' EndingMinutesTime
+        ' 
+        EndingMinutesTime.DisplayMember = "adf"
+        EndingMinutesTime.Font = New Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        EndingMinutesTime.FormattingEnabled = True
+        EndingMinutesTime.Location = New Point(481, 85)
+        EndingMinutesTime.Name = "EndingMinutesTime"
+        EndingMinutesTime.Size = New Size(83, 22)
+        EndingMinutesTime.TabIndex = 8
+        EndingMinutesTime.Text = "Minutes"
+        ' 
+        ' EndingHourtime
+        ' 
+        EndingHourtime.DisplayMember = "adf"
+        EndingHourtime.Font = New Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        EndingHourtime.FormattingEnabled = True
+        EndingHourtime.Location = New Point(408, 85)
+        EndingHourtime.Name = "EndingHourtime"
+        EndingHourtime.Size = New Size(67, 22)
+        EndingHourtime.TabIndex = 7
+        EndingHourtime.Text = "Hour"
+        ' 
+        ' OpeningMinutesTime
+        ' 
+        OpeningMinutesTime.DisplayMember = "adf"
+        OpeningMinutesTime.Font = New Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        OpeningMinutesTime.FormattingEnabled = True
+        OpeningMinutesTime.Location = New Point(184, 85)
+        OpeningMinutesTime.Name = "OpeningMinutesTime"
+        OpeningMinutesTime.Size = New Size(83, 22)
+        OpeningMinutesTime.TabIndex = 6
+        OpeningMinutesTime.Text = "Minutes"
+        ' 
+        ' OpeningHourTime
+        ' 
+        OpeningHourTime.DisplayMember = "adf"
+        OpeningHourTime.Font = New Font("Verdana", 9F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        OpeningHourTime.FormattingEnabled = True
+        OpeningHourTime.Location = New Point(111, 85)
+        OpeningHourTime.Name = "OpeningHourTime"
+        OpeningHourTime.Size = New Size(67, 22)
+        OpeningHourTime.TabIndex = 5
+        OpeningHourTime.Text = "Hour"
+        ' 
+        ' Label10
+        ' 
+        Label10.AutoSize = True
+        Label10.Font = New Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        Label10.ForeColor = Color.White
+        Label10.Location = New Point(273, 90)
+        Label10.Name = "Label10"
+        Label10.Size = New Size(26, 18)
+        Label10.TabIndex = 4
+        Label10.Text = "To"
         ' 
         ' Panel3
         ' 
@@ -443,7 +573,7 @@ Partial Class LandingPage
         Label5.AutoSize = True
         Label5.Font = New Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         Label5.ForeColor = Color.White
-        Label5.Location = New Point(327, 90)
+        Label5.Location = New Point(317, 90)
         Label5.Name = "Label5"
         Label5.Size = New Size(94, 18)
         Label5.TabIndex = 2
@@ -481,6 +611,7 @@ Partial Class LandingPage
         Controls.Add(Panel1)
         FormBorderStyle = FormBorderStyle.None
         Name = "LandingPage"
+        StartPosition = FormStartPosition.CenterScreen
         Text = "LandingPage"
         Panel1.ResumeLayout(False)
         Panel17.ResumeLayout(False)
@@ -495,6 +626,10 @@ Partial Class LandingPage
         NamePanel.ResumeLayout(False)
         NamePanel.PerformLayout()
         Panel13.ResumeLayout(False)
+        PanelB.ResumeLayout(False)
+        PanelB.PerformLayout()
+        PanelC.ResumeLayout(False)
+        PanelC.PerformLayout()
         CType(CDMPic, ComponentModel.ISupportInitialize).EndInit()
         TopPanel.ResumeLayout(False)
         TopPanel.PerformLayout()
@@ -530,8 +665,8 @@ Partial Class LandingPage
     Friend WithEvents Label2 As Label
     Friend WithEvents StartPanel As Panel
     Friend WithEvents Label3 As Label
-    Friend WithEvents Button4 As Button
-    Friend WithEvents Button3 As Button
+    Friend WithEvents EndShiftButton As Button
+    Friend WithEvents StartShiftButton As Button
     Friend WithEvents ExitButton As Button
     Friend WithEvents DateLabel As Label
     Friend WithEvents Label4 As Label
@@ -539,4 +674,14 @@ Partial Class LandingPage
     Friend WithEvents Label5 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label7 As Label
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents DailyHours As Label
+    Friend WithEvents MonthlyHours As Label
+    Friend WithEvents OpeningHourTime As ComboBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents OpeningMinutesTime As ComboBox
+    Friend WithEvents EndingMinutesTime As ComboBox
+    Friend WithEvents EndingHourtime As ComboBox
+    Friend WithEvents Label11 As Label
 End Class
