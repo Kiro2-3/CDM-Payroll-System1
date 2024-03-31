@@ -69,7 +69,6 @@ Public Class LandingPage
         DateLabel.Text = "Today is " & todayDate
 
         If Date.Today.Day = Date.DaysInMonth(Date.Today.Year, Date.Today.Month) Then
-            ' Last day of the month
             UpdateTotalMonthlyHours()
         Else
             Label11.Text = "Still far from the end of the month."
@@ -77,10 +76,8 @@ Public Class LandingPage
     End Sub
 
     Private Sub UpdateTotalMonthlyHours()
-        ' Calculate total monthly hours from the database
         totalMonthlyHours = GetTotalMonthlyHours(userID, Date.Today.Year, Date.Today.Month)
 
-        ' Update UI label
         Label11.Text = "Total Monthly Hours: " & totalMonthlyHours.ToString("0.00")
     End Sub
 
@@ -127,7 +124,6 @@ Public Class LandingPage
     End Sub
 
     Private Sub StartShiftButton_Click(sender As Object, e As EventArgs) Handles StartShiftButton.Click
-        ' Event handler for starting a shift
         shiftStarted = True
         shiftStartTime = DateTime.Now
         StartShiftButton.Enabled = False
@@ -135,14 +131,12 @@ Public Class LandingPage
     End Sub
 
     Private Sub EndShiftButton_Click(sender As Object, e As EventArgs) Handles EndShiftButton.Click
-        ' Event handler for ending a shift
         If shiftStarted Then
             Dim shiftDuration As TimeSpan = DateTime.Now - shiftStartTime
             Dim hoursWorked As Double = shiftDuration.TotalHours
 
             totalDailyHours += hoursWorked
 
-            ' Update total daily hours in the database
             If userID <> 0 Then
                 Dim currentDate As Date = Date.Today
                 InsertTotalDailyHours(userID, currentDate, totalDailyHours)
@@ -150,10 +144,8 @@ Public Class LandingPage
                 MessageBox.Show("Failed to retrieve user ID.")
             End If
 
-            ' Update UI labels
             UpdateDailyHoursLabel()
 
-            ' Reset shift status and enable Start Shift button
             shiftStarted = False
             StartShiftButton.Enabled = True
             EndShiftButton.Enabled = False
