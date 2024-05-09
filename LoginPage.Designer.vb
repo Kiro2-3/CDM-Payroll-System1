@@ -24,6 +24,8 @@ Partial Class LoginPage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LoginPage))
         Panel1 = New Panel()
+        Panel4 = New Panel()
+        Label1 = New Label()
         CloseButton = New Button()
         Panel3 = New Panel()
         PictureBox2 = New PictureBox()
@@ -39,9 +41,8 @@ Partial Class LoginPage
         Panel6 = New Panel()
         RegistrationButton = New Button()
         LoginButton = New Button()
-        Panel4 = New Panel()
-        Label1 = New Label()
         Panel1.SuspendLayout()
+        Panel4.SuspendLayout()
         Panel3.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
@@ -50,7 +51,6 @@ Partial Class LoginPage
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
         Panel6.SuspendLayout()
-        Panel4.SuspendLayout()
         SuspendLayout()
         ' 
         ' Panel1
@@ -67,6 +67,29 @@ Partial Class LoginPage
         Panel1.Padding = New Padding(0, 15, 0, 0)
         Panel1.Size = New Size(384, 124)
         Panel1.TabIndex = 0
+        ' 
+        ' Panel4
+        ' 
+        Panel4.Controls.Add(Label1)
+        Panel4.Dock = DockStyle.Fill
+        Panel4.Location = New Point(100, 15)
+        Panel4.Margin = New Padding(3, 40, 3, 3)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(184, 109)
+        Panel4.TabIndex = 3
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Verdana", 27.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.ForeColor = Color.White
+        Label1.Location = New Point(0, 31)
+        Label1.Margin = New Padding(3, 10, 3, 0)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(186, 45)
+        Label1.TabIndex = 0
+        Label1.Text = "CDMIPS"
+        Label1.TextAlign = ContentAlignment.MiddleCenter
         ' 
         ' CloseButton
         ' 
@@ -167,7 +190,7 @@ Partial Class LoginPage
         ' LinkLabel1
         ' 
         LinkLabel1.AutoSize = True
-        LinkLabel1.Font = New Font("Verdana", 9F)
+        LinkLabel1.Font = New Font("Verdana", 9.0F)
         LinkLabel1.LinkColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
         LinkLabel1.Location = New Point(224, 159)
         LinkLabel1.Name = "LinkLabel1"
@@ -179,7 +202,7 @@ Partial Class LoginPage
         ' RememberCredentials
         ' 
         RememberCredentials.AutoSize = True
-        RememberCredentials.Font = New Font("Verdana", 9F)
+        RememberCredentials.Font = New Font("Verdana", 9.0F)
         RememberCredentials.ForeColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
         RememberCredentials.Location = New Point(108, 158)
         RememberCredentials.Name = "RememberCredentials"
@@ -227,11 +250,11 @@ Partial Class LoginPage
         ' 
         RegistrationButton.Dock = DockStyle.Right
         RegistrationButton.FlatStyle = FlatStyle.Flat
-        RegistrationButton.Font = New Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        RegistrationButton.Font = New Font("Verdana", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         RegistrationButton.ForeColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
-        RegistrationButton.Location = New Point(213, 0)
+        RegistrationButton.Location = New Point(238, 0)
         RegistrationButton.Name = "RegistrationButton"
-        RegistrationButton.Size = New Size(127, 46)
+        RegistrationButton.Size = New Size(102, 46)
         RegistrationButton.TabIndex = 3
         RegistrationButton.Text = "Register"
         RegistrationButton.UseVisualStyleBackColor = True
@@ -241,7 +264,7 @@ Partial Class LoginPage
         LoginButton.BackColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
         LoginButton.Dock = DockStyle.Left
         LoginButton.FlatStyle = FlatStyle.Flat
-        LoginButton.Font = New Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LoginButton.Font = New Font("Verdana", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LoginButton.ForeColor = Color.White
         LoginButton.Location = New Point(20, 0)
         LoginButton.Name = "LoginButton"
@@ -250,32 +273,9 @@ Partial Class LoginPage
         LoginButton.Text = "Login"
         LoginButton.UseVisualStyleBackColor = False
         ' 
-        ' Panel4
-        ' 
-        Panel4.Controls.Add(Label1)
-        Panel4.Dock = DockStyle.Fill
-        Panel4.Location = New Point(100, 15)
-        Panel4.Margin = New Padding(3, 40, 3, 3)
-        Panel4.Name = "Panel4"
-        Panel4.Size = New Size(184, 109)
-        Panel4.TabIndex = 3
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Verdana", 27.75F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.ForeColor = Color.White
-        Label1.Location = New Point(0, 31)
-        Label1.Margin = New Padding(3, 10, 3, 0)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(186, 45)
-        Label1.TabIndex = 0
-        Label1.Text = "CDMIPS"
-        Label1.TextAlign = ContentAlignment.MiddleCenter
-        ' 
         ' LoginPage
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(254), CByte(253), CByte(246))
         ClientSize = New Size(384, 378)
@@ -291,6 +291,8 @@ Partial Class LoginPage
         ShowIcon = False
         StartPosition = FormStartPosition.CenterScreen
         Panel1.ResumeLayout(False)
+        Panel4.ResumeLayout(False)
+        Panel4.PerformLayout()
         Panel3.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
@@ -300,8 +302,6 @@ Partial Class LoginPage
         CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
         Panel6.ResumeLayout(False)
-        Panel4.ResumeLayout(False)
-        Panel4.PerformLayout()
         ResumeLayout(False)
     End Sub
     Friend WithEvents Panel1 As Panel

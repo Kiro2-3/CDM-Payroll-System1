@@ -19,7 +19,6 @@ Public Class DatabaseFunctions
             conn.Close()
         End Try
 
-        ' If count is greater than 0, username and password match
         Return count > 0
     End Function
 

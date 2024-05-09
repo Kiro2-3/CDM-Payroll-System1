@@ -24,12 +24,12 @@ Partial Class LandingPage
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(LandingPage))
         Panel1 = New Panel()
+        Button4 = New Button()
+        Button3 = New Button()
         Button10 = New Button()
         Button9 = New Button()
         Button8 = New Button()
-        Button7 = New Button()
         Button6 = New Button()
-        Button5 = New Button()
         Panel17 = New Panel()
         Label1 = New Label()
         PictureBox2 = New PictureBox()
@@ -46,6 +46,7 @@ Partial Class LandingPage
         ProfName = New Label()
         Button2 = New Button()
         Button1 = New Button()
+        Panel4 = New Panel()
         Panel13 = New Panel()
         PanelB = New Panel()
         DailyHours = New Label()
@@ -88,30 +89,54 @@ Partial Class LandingPage
         ' Panel1
         ' 
         Panel1.BackColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
+        Panel1.Controls.Add(Button4)
+        Panel1.Controls.Add(Button3)
         Panel1.Controls.Add(Button10)
         Panel1.Controls.Add(Button9)
         Panel1.Controls.Add(Button8)
-        Panel1.Controls.Add(Button7)
         Panel1.Controls.Add(Button6)
-        Panel1.Controls.Add(Button5)
         Panel1.Controls.Add(Panel17)
         Panel1.Dock = DockStyle.Left
         Panel1.Location = New Point(0, 0)
         Panel1.Name = "Panel1"
         Panel1.Padding = New Padding(20, 10, 20, 0)
-        Panel1.Size = New Size(254, 681)
+        Panel1.Size = New Size(254, 677)
         Panel1.TabIndex = 0
+        ' 
+        ' Button4
+        ' 
+        Button4.BackColor = SystemColors.ActiveBorder
+        Button4.FlatStyle = FlatStyle.Flat
+        Button4.Font = New Font("Verdana", 11.25F)
+        Button4.Location = New Point(12, 119)
+        Button4.Name = "Button4"
+        Button4.Size = New Size(217, 65)
+        Button4.TabIndex = 8
+        Button4.Text = "Main Dashboard"
+        Button4.UseVisualStyleBackColor = False
+        ' 
+        ' Button3
+        ' 
+        Button3.BackColor = SystemColors.ActiveBorder
+        Button3.FlatStyle = FlatStyle.Flat
+        Button3.Font = New Font("Verdana", 11.25F)
+        Button3.Location = New Point(12, 476)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(217, 65)
+        Button3.TabIndex = 7
+        Button3.Text = "Attendance Report"
+        Button3.UseVisualStyleBackColor = False
         ' 
         ' Button10
         ' 
         Button10.BackColor = SystemColors.ActiveBorder
         Button10.FlatStyle = FlatStyle.Flat
         Button10.Font = New Font("Verdana", 11.25F)
-        Button10.Location = New Point(20, 442)
+        Button10.Location = New Point(12, 190)
         Button10.Name = "Button10"
-        Button10.Size = New Size(214, 41)
+        Button10.Size = New Size(217, 65)
         Button10.TabIndex = 6
-        Button10.Text = "Support"
+        Button10.Text = "Register Instructor"
         Button10.UseVisualStyleBackColor = False
         ' 
         ' Button9
@@ -119,9 +144,9 @@ Partial Class LandingPage
         Button9.BackColor = SystemColors.ActiveBorder
         Button9.FlatStyle = FlatStyle.Flat
         Button9.Font = New Font("Verdana", 11.25F)
-        Button9.Location = New Point(20, 376)
+        Button9.Location = New Point(14, 405)
         Button9.Name = "Button9"
-        Button9.Size = New Size(214, 41)
+        Button9.Size = New Size(215, 65)
         Button9.TabIndex = 5
         Button9.Text = "Employment History"
         Button9.UseVisualStyleBackColor = False
@@ -131,48 +156,24 @@ Partial Class LandingPage
         Button8.BackColor = SystemColors.ActiveBorder
         Button8.FlatStyle = FlatStyle.Flat
         Button8.Font = New Font("Verdana", 11.25F)
-        Button8.Location = New Point(20, 310)
+        Button8.Location = New Point(14, 335)
         Button8.Name = "Button8"
-        Button8.Size = New Size(214, 41)
+        Button8.Size = New Size(215, 64)
         Button8.TabIndex = 4
         Button8.Text = "Summary Report"
         Button8.UseVisualStyleBackColor = False
-        ' 
-        ' Button7
-        ' 
-        Button7.BackColor = SystemColors.ActiveBorder
-        Button7.FlatStyle = FlatStyle.Flat
-        Button7.Font = New Font("Verdana", 11.25F)
-        Button7.Location = New Point(20, 246)
-        Button7.Name = "Button7"
-        Button7.Size = New Size(214, 41)
-        Button7.TabIndex = 3
-        Button7.Text = "Submit Exception"
-        Button7.UseVisualStyleBackColor = False
         ' 
         ' Button6
         ' 
         Button6.BackColor = SystemColors.ActiveBorder
         Button6.FlatStyle = FlatStyle.Flat
         Button6.Font = New Font("Verdana", 11.25F)
-        Button6.Location = New Point(20, 182)
+        Button6.Location = New Point(12, 261)
         Button6.Name = "Button6"
-        Button6.Size = New Size(214, 41)
+        Button6.Size = New Size(217, 68)
         Button6.TabIndex = 2
-        Button6.Text = "Schedule"
+        Button6.Text = "Instructor Schedules"
         Button6.UseVisualStyleBackColor = False
-        ' 
-        ' Button5
-        ' 
-        Button5.BackColor = SystemColors.ActiveBorder
-        Button5.FlatStyle = FlatStyle.Flat
-        Button5.Font = New Font("Verdana", 11.25F)
-        Button5.Location = New Point(20, 120)
-        Button5.Name = "Button5"
-        Button5.Size = New Size(214, 41)
-        Button5.TabIndex = 1
-        Button5.Text = "Dashboard"
-        Button5.UseVisualStyleBackColor = False
         ' 
         ' Panel17
         ' 
@@ -229,6 +230,7 @@ Partial Class LandingPage
         Panel2.Controls.Add(NamePanel)
         Panel2.Controls.Add(Button2)
         Panel2.Controls.Add(Button1)
+        Panel2.Controls.Add(Panel4)
         Panel2.Dock = DockStyle.Top
         Panel2.Location = New Point(254, 0)
         Panel2.Name = "Panel2"
@@ -241,7 +243,7 @@ Partial Class LandingPage
         ExitButton.BackColor = Color.White
         ExitButton.FlatStyle = FlatStyle.Flat
         ExitButton.ForeColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
-        ExitButton.Location = New Point(963, 7)
+        ExitButton.Location = New Point(982, 0)
         ExitButton.Name = "ExitButton"
         ExitButton.Size = New Size(25, 23)
         ExitButton.TabIndex = 7
@@ -251,7 +253,7 @@ Partial Class LandingPage
         ' EndShiftButton
         ' 
         EndShiftButton.Image = CType(resources.GetObject("EndShiftButton.Image"), Image)
-        EndShiftButton.Location = New Point(247, 35)
+        EndShiftButton.Location = New Point(235, 21)
         EndShiftButton.Name = "EndShiftButton"
         EndShiftButton.Size = New Size(83, 41)
         EndShiftButton.TabIndex = 6
@@ -260,7 +262,7 @@ Partial Class LandingPage
         ' StartShiftButton
         ' 
         StartShiftButton.Image = CType(resources.GetObject("StartShiftButton.Image"), Image)
-        StartShiftButton.Location = New Point(14, 36)
+        StartShiftButton.Location = New Point(14, 22)
         StartShiftButton.Name = "StartShiftButton"
         StartShiftButton.Size = New Size(83, 41)
         StartShiftButton.TabIndex = 5
@@ -270,7 +272,7 @@ Partial Class LandingPage
         ' 
         StartPanel.BackColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
         StartPanel.Controls.Add(Label3)
-        StartPanel.Location = New Point(103, 36)
+        StartPanel.Location = New Point(103, 22)
         StartPanel.Name = "StartPanel"
         StartPanel.Size = New Size(123, 40)
         StartPanel.TabIndex = 4
@@ -281,19 +283,19 @@ Partial Class LandingPage
         Label3.BackColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
         Label3.Font = New Font("Verdana", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label3.ForeColor = Color.White
-        Label3.Location = New Point(0, 7)
+        Label3.Location = New Point(3, 8)
         Label3.Name = "Label3"
-        Label3.Size = New Size(123, 23)
+        Label3.Size = New Size(96, 23)
         Label3.TabIndex = 2
-        Label3.Text = "Start Shift"
+        Label3.Text = "On shift"
         ' 
         ' EndPanel
         ' 
         EndPanel.BackColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
         EndPanel.Controls.Add(Label2)
-        EndPanel.Location = New Point(336, 36)
+        EndPanel.Location = New Point(324, 23)
         EndPanel.Name = "EndPanel"
-        EndPanel.Size = New Size(109, 40)
+        EndPanel.Size = New Size(120, 40)
         EndPanel.TabIndex = 3
         ' 
         ' Label2
@@ -302,7 +304,7 @@ Partial Class LandingPage
         Label2.BackColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
         Label2.Font = New Font("Verdana", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label2.ForeColor = Color.White
-        Label2.Location = New Point(0, 6)
+        Label2.Location = New Point(3, 6)
         Label2.Name = "Label2"
         Label2.Size = New Size(109, 23)
         Label2.TabIndex = 2
@@ -312,7 +314,7 @@ Partial Class LandingPage
         ' 
         NamePanel.BackColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
         NamePanel.Controls.Add(ProfName)
-        NamePanel.Location = New Point(477, 36)
+        NamePanel.Location = New Point(466, 23)
         NamePanel.Name = "NamePanel"
         NamePanel.Size = New Size(352, 40)
         NamePanel.TabIndex = 2
@@ -323,17 +325,17 @@ Partial Class LandingPage
         ProfName.BackColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
         ProfName.Font = New Font("Verdana", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         ProfName.ForeColor = Color.White
-        ProfName.Location = New Point(3, 7)
+        ProfName.Location = New Point(63, 7)
         ProfName.Name = "ProfName"
-        ProfName.Size = New Size(346, 23)
+        ProfName.Size = New Size(222, 23)
         ProfName.TabIndex = 2
-        ProfName.Text = "JEPJEP EVANGELIO - ICS HEAD"
+        ProfName.Text = "Hello Administrator"
         ' 
         ' Button2
         ' 
         Button2.ForeColor = Color.DarkGoldenrod
         Button2.Image = CType(resources.GetObject("Button2.Image"), Image)
-        Button2.Location = New Point(840, 36)
+        Button2.Location = New Point(824, 24)
         Button2.Name = "Button2"
         Button2.Size = New Size(71, 40)
         Button2.TabIndex = 1
@@ -342,11 +344,18 @@ Partial Class LandingPage
         ' Button1
         ' 
         Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
-        Button1.Location = New Point(917, 36)
+        Button1.Location = New Point(904, 24)
         Button1.Name = "Button1"
         Button1.Size = New Size(71, 40)
         Button1.TabIndex = 0
         Button1.UseVisualStyleBackColor = True
+        ' 
+        ' Panel4
+        ' 
+        Panel4.Location = New Point(6, 10)
+        Panel4.Name = "Panel4"
+        Panel4.Size = New Size(993, 671)
+        Panel4.TabIndex = 8
         ' 
         ' Panel13
         ' 
@@ -359,7 +368,7 @@ Partial Class LandingPage
         Panel13.Location = New Point(273, 82)
         Panel13.Name = "Panel13"
         Panel13.Padding = New Padding(0, 10, 0, 0)
-        Panel13.Size = New Size(969, 567)
+        Panel13.Size = New Size(969, 584)
         Panel13.TabIndex = 2
         ' 
         ' PanelB
@@ -439,9 +448,9 @@ Partial Class LandingPage
         ' CDMPic
         ' 
         CDMPic.Image = CType(resources.GetObject("CDMPic.Image"), Image)
-        CDMPic.Location = New Point(11, 374)
+        CDMPic.Location = New Point(5, 334)
         CDMPic.Name = "CDMPic"
-        CDMPic.Size = New Size(951, 180)
+        CDMPic.Size = New Size(951, 238)
         CDMPic.SizeMode = PictureBoxSizeMode.StretchImage
         CDMPic.TabIndex = 4
         CDMPic.TabStop = False
@@ -605,7 +614,7 @@ Partial Class LandingPage
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1264, 681)
+        ClientSize = New Size(1264, 677)
         Controls.Add(Panel13)
         Controls.Add(Panel2)
         Controls.Add(Panel1)
@@ -644,9 +653,7 @@ Partial Class LandingPage
     Friend WithEvents Button10 As Button
     Friend WithEvents Button9 As Button
     Friend WithEvents Button8 As Button
-    Friend WithEvents Button7 As Button
     Friend WithEvents Button6 As Button
-    Friend WithEvents Button5 As Button
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents Panel13 As Panel
@@ -684,4 +691,7 @@ Partial Class LandingPage
     Friend WithEvents EndingMinutesTime As ComboBox
     Friend WithEvents EndingHourtime As ComboBox
     Friend WithEvents Label11 As Label
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Panel4 As Panel
 End Class
