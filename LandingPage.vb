@@ -183,4 +183,38 @@ Public Class LandingPage
     Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
         Application.Exit()
     End Sub
+
+    Private Sub ProfName_Click(sender As Object, e As EventArgs) Handles ProfName.Click
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
+
+    End Sub
+
+    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
+        Me.Hide()
+        Dim registrationForm As New RegistrationPage()
+        registrationForm.ShowDialog()
+        Me.Close()
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        Me.Hide()
+        Dim InstructorsSchedule As New InstructorsSchedule(userID)
+        InstructorsSchedule.ShowDialog()
+        Me.Close()
+    End Sub
+
+    Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
+
+    End Sub
+
+    Private Sub OpeningHourTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OpeningHourTime.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+
+    End Sub
 End Class

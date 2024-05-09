@@ -273,7 +273,7 @@ Partial Class RegistrationPage
         UsernameTextbox.Name = "UsernameTextbox"
         UsernameTextbox.Size = New Size(281, 31)
         UsernameTextbox.TabIndex = 6
-        UsernameTextbox.Text = "romnoel02"
+        UsernameTextbox.Text = ""
         ' 
         ' Panel3
         ' 
@@ -338,7 +338,7 @@ Partial Class RegistrationPage
         LastNameTextbox.Name = "LastNameTextbox"
         LastNameTextbox.Size = New Size(281, 31)
         LastNameTextbox.TabIndex = 2
-        LastNameTextbox.Text = "Petracorta"
+        LastNameTextbox.Text = ""
         ' 
         ' MiddleNameTextbox
         ' 
@@ -349,7 +349,7 @@ Partial Class RegistrationPage
         MiddleNameTextbox.Name = "MiddleNameTextbox"
         MiddleNameTextbox.Size = New Size(281, 31)
         MiddleNameTextbox.TabIndex = 1
-        MiddleNameTextbox.Text = "Edralin"
+        MiddleNameTextbox.Text = ""
         ' 
         ' FirstNameTextbox
         ' 
@@ -360,7 +360,7 @@ Partial Class RegistrationPage
         FirstNameTextbox.Name = "FirstNameTextbox"
         FirstNameTextbox.Size = New Size(281, 31)
         FirstNameTextbox.TabIndex = 0
-        FirstNameTextbox.Text = "Romnoel"
+        FirstNameTextbox.Text = ""
         ' 
         ' TabPage2
         ' 
@@ -460,7 +460,7 @@ Partial Class RegistrationPage
         EmailTextbox.Name = "EmailTextbox"
         EmailTextbox.Size = New Size(281, 31)
         EmailTextbox.TabIndex = 15
-        EmailTextbox.Text = "romnoel.petracorta@gmail.com"
+        EmailTextbox.Text = ""
         ' 
         ' TabPage3
         ' 
