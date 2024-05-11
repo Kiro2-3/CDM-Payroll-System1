@@ -138,7 +138,7 @@ Partial Class RegistrationPage
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Verdana", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(147, 111)
+        Label2.Location = New Point(459, 111)
         Label2.Margin = New Padding(10, 0, 3, 0)
         Label2.Name = "Label2"
         Label2.Size = New Size(356, 59)
@@ -273,7 +273,6 @@ Partial Class RegistrationPage
         UsernameTextbox.Name = "UsernameTextbox"
         UsernameTextbox.Size = New Size(281, 31)
         UsernameTextbox.TabIndex = 6
-        UsernameTextbox.Text = ""
         ' 
         ' Panel3
         ' 
@@ -338,7 +337,6 @@ Partial Class RegistrationPage
         LastNameTextbox.Name = "LastNameTextbox"
         LastNameTextbox.Size = New Size(281, 31)
         LastNameTextbox.TabIndex = 2
-        LastNameTextbox.Text = ""
         ' 
         ' MiddleNameTextbox
         ' 
@@ -349,7 +347,6 @@ Partial Class RegistrationPage
         MiddleNameTextbox.Name = "MiddleNameTextbox"
         MiddleNameTextbox.Size = New Size(281, 31)
         MiddleNameTextbox.TabIndex = 1
-        MiddleNameTextbox.Text = ""
         ' 
         ' FirstNameTextbox
         ' 
@@ -360,7 +357,6 @@ Partial Class RegistrationPage
         FirstNameTextbox.Name = "FirstNameTextbox"
         FirstNameTextbox.Size = New Size(281, 31)
         FirstNameTextbox.TabIndex = 0
-        FirstNameTextbox.Text = ""
         ' 
         ' TabPage2
         ' 
@@ -460,7 +456,6 @@ Partial Class RegistrationPage
         EmailTextbox.Name = "EmailTextbox"
         EmailTextbox.Size = New Size(281, 31)
         EmailTextbox.TabIndex = 15
-        EmailTextbox.Text = ""
         ' 
         ' TabPage3
         ' 

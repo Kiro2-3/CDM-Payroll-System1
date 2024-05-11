@@ -156,7 +156,7 @@ Public Class LandingPage
         DailyHours.Text = "Daily Hours: " & totalDailyHours.ToString("0.00")
     End Sub
 
-    Private Sub InsertTotalDailyHours(id As Integer, shiftDate As Date, totalDailyHours As Double)
+    Public Sub InsertTotalDailyHours(id As Integer, shiftDate As Date, totalDailyHours As Double)
         Dim query As String = "INSERT INTO userTime (ID, ShiftDate, DailyHours) VALUES (@id, @shiftDate, @totalDailyHours)"
 
         Try
