@@ -30,6 +30,7 @@ Partial Class LoginPage
         Panel3 = New Panel()
         PictureBox2 = New PictureBox()
         Panel2 = New Panel()
+        PictureBox5 = New PictureBox()
         PictureBox1 = New PictureBox()
         Panel5 = New Panel()
         PictureBox4 = New PictureBox()
@@ -41,11 +42,13 @@ Partial Class LoginPage
         Panel6 = New Panel()
         RegistrationButton = New Button()
         LoginButton = New Button()
+        RichTextBox1 = New RichTextBox()
         Panel1.SuspendLayout()
         Panel4.SuspendLayout()
         Panel3.SuspendLayout()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         Panel2.SuspendLayout()
+        CType(PictureBox5, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         Panel5.SuspendLayout()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
@@ -131,6 +134,7 @@ Partial Class LoginPage
         ' Panel2
         ' 
         Panel2.BackColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
+        Panel2.Controls.Add(PictureBox5)
         Panel2.Controls.Add(PictureBox1)
         Panel2.Dock = DockStyle.Left
         Panel2.Location = New Point(0, 15)
@@ -139,6 +143,18 @@ Partial Class LoginPage
         Panel2.Padding = New Padding(0, 8, 4, 8)
         Panel2.Size = New Size(100, 109)
         Panel2.TabIndex = 0
+        ' 
+        ' PictureBox5
+        ' 
+        PictureBox5.Dock = DockStyle.Fill
+        PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), Image)
+        PictureBox5.Location = New Point(0, 8)
+        PictureBox5.Margin = New Padding(4, 3, 4, 3)
+        PictureBox5.Name = "PictureBox5"
+        PictureBox5.Size = New Size(96, 93)
+        PictureBox5.SizeMode = PictureBoxSizeMode.Zoom
+        PictureBox5.TabIndex = 1
+        PictureBox5.TabStop = False
         ' 
         ' PictureBox1
         ' 
@@ -170,7 +186,7 @@ Partial Class LoginPage
         ' PictureBox4
         ' 
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(7, 76)
+        PictureBox4.Location = New Point(16, 97)
         PictureBox4.Name = "PictureBox4"
         PictureBox4.Size = New Size(84, 54)
         PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
@@ -180,7 +196,7 @@ Partial Class LoginPage
         ' PictureBox3
         ' 
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(7, 3)
+        PictureBox3.Location = New Point(12, 23)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(84, 54)
         PictureBox3.SizeMode = PictureBoxSizeMode.Zoom
@@ -190,9 +206,9 @@ Partial Class LoginPage
         ' LinkLabel1
         ' 
         LinkLabel1.AutoSize = True
-        LinkLabel1.Font = New Font("Verdana", 9.0F)
+        LinkLabel1.Font = New Font("Verdana", 9F)
         LinkLabel1.LinkColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
-        LinkLabel1.Location = New Point(224, 159)
+        LinkLabel1.Location = New Point(246, 184)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(121, 14)
         LinkLabel1.TabIndex = 3
@@ -202,9 +218,9 @@ Partial Class LoginPage
         ' RememberCredentials
         ' 
         RememberCredentials.AutoSize = True
-        RememberCredentials.Font = New Font("Verdana", 9.0F)
+        RememberCredentials.Font = New Font("Verdana", 9F)
         RememberCredentials.ForeColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
-        RememberCredentials.Location = New Point(108, 158)
+        RememberCredentials.Location = New Point(27, 184)
         RememberCredentials.Name = "RememberCredentials"
         RememberCredentials.Size = New Size(116, 18)
         RememberCredentials.TabIndex = 2
@@ -216,7 +232,7 @@ Partial Class LoginPage
         PasswordField.BackColor = SystemColors.ControlLight
         PasswordField.Font = New Font("Verdana", 15.75F)
         PasswordField.ForeColor = Color.FromArgb(CByte(199), CByte(199), CByte(199))
-        PasswordField.Location = New Point(108, 85)
+        PasswordField.Location = New Point(110, 107)
         PasswordField.Name = "PasswordField"
         PasswordField.PasswordChar = "*"c
         PasswordField.Size = New Size(237, 33)
@@ -228,7 +244,7 @@ Partial Class LoginPage
         UsernameField.BackColor = SystemColors.ControlLight
         UsernameField.Font = New Font("Verdana", 15.75F)
         UsernameField.ForeColor = Color.FromArgb(CByte(199), CByte(199), CByte(199))
-        UsernameField.Location = New Point(108, 24)
+        UsernameField.Location = New Point(110, 44)
         UsernameField.Name = "UsernameField"
         UsernameField.Size = New Size(237, 33)
         UsernameField.TabIndex = 0
@@ -239,7 +255,7 @@ Partial Class LoginPage
         Panel6.BackColor = Color.White
         Panel6.Controls.Add(RegistrationButton)
         Panel6.Controls.Add(LoginButton)
-        Panel6.Location = New Point(7, 320)
+        Panel6.Location = New Point(7, 353)
         Panel6.Margin = New Padding(8, 3, 8, 3)
         Panel6.Name = "Panel6"
         Panel6.Padding = New Padding(20, 0, 20, 0)
@@ -250,7 +266,7 @@ Partial Class LoginPage
         ' 
         RegistrationButton.Dock = DockStyle.Right
         RegistrationButton.FlatStyle = FlatStyle.Flat
-        RegistrationButton.Font = New Font("Verdana", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        RegistrationButton.Font = New Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         RegistrationButton.ForeColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
         RegistrationButton.Location = New Point(238, 0)
         RegistrationButton.Name = "RegistrationButton"
@@ -264,7 +280,7 @@ Partial Class LoginPage
         LoginButton.BackColor = Color.FromArgb(CByte(0), CByte(82), CByte(8))
         LoginButton.Dock = DockStyle.Left
         LoginButton.FlatStyle = FlatStyle.Flat
-        LoginButton.Font = New Font("Verdana", 12.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        LoginButton.Font = New Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         LoginButton.ForeColor = Color.White
         LoginButton.Location = New Point(20, 0)
         LoginButton.Name = "LoginButton"
@@ -273,13 +289,22 @@ Partial Class LoginPage
         LoginButton.Text = "Login"
         LoginButton.UseVisualStyleBackColor = False
         ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.Location = New Point(269, 326)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.Size = New Size(8, 8)
+        RichTextBox1.TabIndex = 7
+        RichTextBox1.Text = ""
+        ' 
         ' LoginPage
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.FromArgb(CByte(254), CByte(253), CByte(246))
-        ClientSize = New Size(384, 378)
+        ClientSize = New Size(384, 432)
         ControlBox = False
+        Controls.Add(RichTextBox1)
         Controls.Add(Panel6)
         Controls.Add(Panel5)
         Controls.Add(Panel1)
@@ -296,6 +321,7 @@ Partial Class LoginPage
         Panel3.ResumeLayout(False)
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         Panel2.ResumeLayout(False)
+        CType(PictureBox5, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         Panel5.ResumeLayout(False)
         Panel5.PerformLayout()
@@ -319,8 +345,10 @@ Partial Class LoginPage
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents CloseButton As Button
     Friend WithEvents Panel4 As Panel
     Friend WithEvents Label1 As Label
+    Friend WithEvents PictureBox5 As PictureBox
+    Friend WithEvents CloseButton As Button
+    Friend WithEvents RichTextBox1 As RichTextBox
 
 End Class

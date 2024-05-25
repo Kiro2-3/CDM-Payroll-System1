@@ -82,4 +82,12 @@ Public Class LoginPage
             MessageBox.Show("Invalid username or password!")
         End If
     End Sub
+
+    Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
+
+    End Sub
+
+    Private Sub LoginPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class

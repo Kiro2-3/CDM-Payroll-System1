@@ -15,39 +15,12 @@ Public Class LandingPage
     End Sub
 
     Private Sub LandingPage_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        MakeRoundedControl(CDMPic, 25)
-        MakeRoundedControl(TopPanel, 25)
-        MakeRoundedControl(PanelA, 25)
-        MakeRoundedControl(PanelB, 25)
-        MakeRoundedControl(PanelC, 25)
-        MakeRoundedControl(NamePanel, 10)
-        MakeRoundedControl(StartPanel, 10)
-        MakeRoundedControl(EndPanel, 10)
+
         MakeRoundedControl(Me, 25)
 
-        InitializeComboBoxes()
 
-        UpdateDateLabel()
-
-        StartShiftButton.Enabled = False
-
-        EndShiftButton.Enabled = False
     End Sub
 
-    Private Sub InitializeComboBoxes()
-        For i As Integer = 0 To 23
-            OpeningHourTime.Items.Add(i.ToString("00"))
-            EndingHourtime.Items.Add(i.ToString("00"))
-        Next
-
-        For i As Integer = 0 To 59
-            OpeningMinutesTime.Items.Add(i.ToString("00"))
-            EndingMinutesTime.Items.Add(i.ToString("00"))
-        Next
-
-        AddHandler OpeningHourTime.SelectedIndexChanged, AddressOf OpeningTimeComboBox_SelectedIndexChanged
-        AddHandler OpeningMinutesTime.SelectedIndexChanged, AddressOf OpeningTimeComboBox_SelectedIndexChanged
-    End Sub
 
     Private Sub MakeRoundedControl(control As Control, cornerRadius As Integer)
         Dim path As New GraphicsPath()
@@ -64,22 +37,8 @@ Public Class LandingPage
         control.Region = New Region(path)
     End Sub
 
-    Private Sub UpdateDateLabel()
-        Dim todayDate As String = Date.Today.ToString("dddd, MMMM dd, yyyy")
-        DateLabel.Text = "Today is " & todayDate
 
-        If Date.Today.Day = Date.DaysInMonth(Date.Today.Year, Date.Today.Month) Then
-            UpdateTotalMonthlyHours()
-        Else
-            Label11.Text = "Still far from the end of the month."
-        End If
-    End Sub
 
-    Private Sub UpdateTotalMonthlyHours()
-        totalMonthlyHours = GetTotalMonthlyHours(userID, Date.Today.Year, Date.Today.Month)
-
-        Label11.Text = "Total Monthly Hours: " & totalMonthlyHours.ToString("0.00")
-    End Sub
 
     Private Function GetTotalMonthlyHours(userID As Integer, year As Integer, month As Integer) As Double
         Dim totalHours As Double = 0
@@ -107,54 +66,9 @@ Public Class LandingPage
         Return totalHours
     End Function
 
-    Private Sub OpeningTimeComboBox_SelectedIndexChanged(sender As Object, e As EventArgs)
-        If OpeningHourTime.SelectedIndex <> -1 AndAlso OpeningMinutesTime.SelectedIndex <> -1 AndAlso
-       EndingHourtime.SelectedIndex <> -1 AndAlso EndingMinutesTime.SelectedIndex <> -1 Then
-            StartShiftButton.Enabled = True
-        Else
-            StartShiftButton.Enabled = False
-        End If
 
-        EndingHourtime.Enabled = OpeningHourTime.SelectedIndex <> -1 AndAlso OpeningMinutesTime.SelectedIndex <> -1
-        EndingMinutesTime.Enabled = OpeningHourTime.SelectedIndex <> -1 AndAlso OpeningMinutesTime.SelectedIndex <> -1
 
-        If Not shiftStarted Then
-            StartShiftButton.Enabled = True
-        End If
-    End Sub
 
-    Private Sub StartShiftButton_Click(sender As Object, e As EventArgs) Handles StartShiftButton.Click
-        shiftStarted = True
-        shiftStartTime = DateTime.Now
-        StartShiftButton.Enabled = False
-        EndShiftButton.Enabled = True
-    End Sub
-
-    Private Sub EndShiftButton_Click(sender As Object, e As EventArgs) Handles EndShiftButton.Click
-        If shiftStarted Then
-            Dim shiftDuration As TimeSpan = DateTime.Now - shiftStartTime
-            Dim hoursWorked As Double = shiftDuration.TotalHours
-
-            totalDailyHours += hoursWorked
-
-            If userID <> 0 Then
-                Dim currentDate As Date = Date.Today
-                InsertTotalDailyHours(userID, currentDate, totalDailyHours)
-            Else
-                MessageBox.Show("Failed to retrieve user ID.")
-            End If
-
-            UpdateDailyHoursLabel()
-
-            shiftStarted = False
-            StartShiftButton.Enabled = True
-            EndShiftButton.Enabled = False
-        End If
-    End Sub
-
-    Private Sub UpdateDailyHoursLabel()
-        DailyHours.Text = "Daily Hours: " & totalDailyHours.ToString("0.00")
-    End Sub
 
     Public Sub InsertTotalDailyHours(id As Integer, shiftDate As Date, totalDailyHours As Double)
         Dim query As String = "INSERT INTO userTime (ID, ShiftDate, DailyHours) VALUES (@id, @shiftDate, @totalDailyHours)"
@@ -180,37 +94,117 @@ Public Class LandingPage
         End Try
     End Sub
 
-    Private Sub ExitButton_Click(sender As Object, e As EventArgs) Handles ExitButton.Click
-        Application.Exit()
-    End Sub
 
-    Private Sub ProfName_Click(sender As Object, e As EventArgs) Handles ProfName.Click
 
-    End Sub
 
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles Label3.Click
 
-    End Sub
 
-    Private Sub Button10_Click(sender As Object, e As EventArgs) Handles Button10.Click
-        Me.Hide()
-        Dim registrationForm As New RegistrationPage()
-        registrationForm.ShowDialog()
-        Me.Close()
-    End Sub
-
-    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
-        Me.Hide()
-        Dim InstructorsSchedule As New InstructorsSchedule(userID)
-        InstructorsSchedule.ShowDialog()
-        Me.Close()
-    End Sub
 
     Private Sub Panel1_Paint(sender As Object, e As PaintEventArgs) Handles Panel1.Paint
 
     End Sub
 
-    Private Sub OpeningHourTime_SelectedIndexChanged(sender As Object, e As EventArgs) Handles OpeningHourTime.SelectedIndexChanged
+
+
+
+
+
+
+
+
+    Private Sub MakeButtonRound(button As Button)
+        Dim diameter As Integer = Math.Min(button.Width, button.Height)
+        Dim path As New GraphicsPath()
+        path.AddEllipse(New Rectangle(0, 0, diameter, diameter))
+        button.Region = New Region(path)
+    End Sub
+    Private Sub PictureBox7_Click(sender As Object, e As EventArgs) Handles PictureBox7.Click
+        Application.Exit()
+    End Sub
+    Private Sub ShowFormInPanel(formToShow As Form)
+        ' Clear previous controls
+        Panel3.Controls.Clear()
+        ' Set the form's TopLevel property to false
+        formToShow.TopLevel = False
+        ' Add the form to the panel
+        Panel3.Controls.Add(formToShow)
+        ' Set the form's Dock property to Fill to fill the panel
+        formToShow.Dock = DockStyle.Fill
+        ' Show the form
+        formToShow.Show()
+    End Sub
+    Private Sub ShowFormInPanel1(formToShow As Form)
+        ' Clear previous controls
+        Panel3.Controls.Clear()
+        ' Set the form's TopLevel property to false
+        formToShow.TopLevel = False
+        ' Add the form to the panel
+        Panel4.Controls.Add(formToShow)
+        ' Set the form's Dock property to Fill to fill the panel
+        formToShow.Dock = DockStyle.Fill
+        ' Show the form
+        formToShow.Show()
+    End Sub
+
+    Private Sub ShowFormInPanel2(formToShow As Form)
+        ' Clear previous controls
+        Panel3.Controls.Clear()
+        ' Set the form's TopLevel property to false
+        formToShow.TopLevel = False
+        ' Add the form to the panel
+        Panel3.Controls.Add(formToShow)
+        ' Set the form's Dock property to Fill to fill the panel
+        formToShow.Dock = DockStyle.Fill
+        ' Show the form
+        formToShow.Show()
+    End Sub
+    Private Sub ShowFormInPanel4(formToShow As Form)
+        ' Clear previous controls
+        Panel3.Controls.Clear()
+        ' Set the form's TopLevel property to false
+        formToShow.TopLevel = False
+        ' Add the form to the panel
+        Panel4.Controls.Add(formToShow)
+        ' Set the form's Dock property to Fill to fill the panel
+        formToShow.Dock = DockStyle.Fill
+        ' Show the form
+        formToShow.Show()
+    End Sub
+    Private Sub ShowFormInPanel8(formToShow As Form)
+        ' Clear previous controls
+        Panel3.Controls.Clear()
+        ' Set the form's TopLevel property to false
+        formToShow.TopLevel = False
+        ' Add the form to the panel
+        Panel3.Controls.Add(formToShow)
+        ' Set the form's Dock property to Fill to fill the panel
+        formToShow.Dock = DockStyle.Fill
+        ' Show the form
+        formToShow.Show()
+    End Sub
+
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        ShowFormInPanel(newschedtab)
+    End Sub
+    Private Sub ClearPanel(panel As Panel)
+        ' Clear all controls from the panel
+        panel.Controls.Clear()
+    End Sub
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        ShowFormInPanel(RegisterInstructor)
+    End Sub
+
+    Private Sub PictureBox12_Click(sender As Object, e As EventArgs) Handles PictureBox12.Click
+
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        ShowFormInPanel2(maindashboard1)
+    End Sub
+
+    Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
+        ShowFormInPanel8(payrollsum)
 
     End Sub
 
