@@ -147,7 +147,6 @@ Partial Class LandingPage
         ' 
         ' PictureBox8
         ' 
-<<<<<<< Updated upstream
         PictureBox8.Image = CType(resources.GetObject("PictureBox8.Image"), Image)
         PictureBox8.Location = New Point(23, 92)
         PictureBox8.Name = "PictureBox8"
@@ -155,17 +154,6 @@ Partial Class LandingPage
         PictureBox8.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox8.TabIndex = 16
         PictureBox8.TabStop = False
-=======
-        Button8.BackColor = SystemColors.ActiveBorder
-        Button8.FlatStyle = FlatStyle.Flat
-        Button8.Font = New Font("Verdana", 11.25F)
-        Button8.Location = New Point(14, 335)
-        Button8.Name = "Button8"
-        Button8.Size = New Size(215, 64)
-        Button8.TabIndex = 4
-        Button8.Text = "Payroll Report"
-        Button8.UseVisualStyleBackColor = False
->>>>>>> Stashed changes
         ' 
         ' PictureBox6
         ' 
