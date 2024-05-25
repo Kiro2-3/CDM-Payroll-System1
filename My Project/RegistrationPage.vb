@@ -74,7 +74,7 @@ Public Class RegistrationPage
     Private Sub FirstNameTextbox_Leave(sender As Object, e As EventArgs) Handles FirstNameTextbox.Leave
         If FirstNameTextbox.Text = "" Then
             FirstNameTextbox.Text = "Firstname"
-            FirstNameTextbox.ForeColor = Color.Silver
+            FirstNameTextbox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub MiddleNameTextbox_Enter(sender As Object, e As EventArgs) Handles MiddleNameTextbox.Enter
@@ -87,7 +87,7 @@ Public Class RegistrationPage
     Private Sub MiddleNameTextbox_Leave(sender As Object, e As EventArgs) Handles MiddleNameTextbox.Leave
         If MiddleNameTextbox.Text = "" Then
             MiddleNameTextbox.Text = "Middle Name"
-            MiddleNameTextbox.ForeColor = Color.Silver
+            MiddleNameTextbox.ForeColor = Color.Black
         End If
     End Sub
 
@@ -101,7 +101,7 @@ Public Class RegistrationPage
     Private Sub LastNameTextbox_Leave(sender As Object, e As EventArgs) Handles LastNameTextbox.Leave
         If LastNameTextbox.Text = "" Then
             LastNameTextbox.Text = "Surname"
-            LastNameTextbox.ForeColor = Color.Silver
+            LastNameTextbox.ForeColor = Color.Black
         End If
     End Sub
 
@@ -115,7 +115,7 @@ Public Class RegistrationPage
     Private Sub UsernameTextbox_Leave(sender As Object, e As EventArgs) Handles UsernameTextbox.Leave
         If UsernameTextbox.Text = "" Then
             UsernameTextbox.Text = "Username"
-            UsernameTextbox.ForeColor = Color.Silver
+            UsernameTextbox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub PasswordTextbox_Enter(sender As Object, e As EventArgs) Handles PasswordTextbox.Enter
@@ -128,7 +128,7 @@ Public Class RegistrationPage
     Private Sub PasswordTextbox_Leave(sender As Object, e As EventArgs) Handles PasswordTextbox.Leave
         If PasswordTextbox.Text = "" Then
             PasswordTextbox.Text = "********"
-            PasswordTextbox.ForeColor = Color.Silver
+            PasswordTextbox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub EmailTextbox_Enter(sender As Object, e As EventArgs) Handles EmailTextbox.Enter, Label12.Enter
@@ -141,7 +141,7 @@ Public Class RegistrationPage
     Private Sub EmailTextbox_Leave(sender As Object, e As EventArgs) Handles EmailTextbox.Leave, Label12.Leave
         If EmailTextbox.Text = "" Then
             EmailTextbox.Text = "Email"
-            EmailTextbox.ForeColor = Color.Silver
+            EmailTextbox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub ContactTextbox_Enter(sender As Object, e As EventArgs) Handles ContactTextbox.Enter
@@ -154,7 +154,7 @@ Public Class RegistrationPage
     Private Sub ContactTextbox_Leave(sender As Object, e As EventArgs) Handles ContactTextbox.Leave
         If ContactTextbox.Text = "" Then
             ContactTextbox.Text = "Contact No#"
-            ContactTextbox.ForeColor = Color.Silver
+            ContactTextbox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub AddressTextbox_Enter(sender As Object, e As EventArgs) Handles AddressTextbox.Enter
@@ -167,7 +167,7 @@ Public Class RegistrationPage
     Private Sub AddressTextbox_Leave(sender As Object, e As EventArgs) Handles AddressTextbox.Leave
         If AddressTextbox.Text = "" Then
             AddressTextbox.Text = "Address"
-            AddressTextbox.ForeColor = Color.Silver
+            AddressTextbox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub GovermentTextbox_Enter(sender As Object, e As EventArgs) Handles GovermentTextbox.Enter
@@ -180,7 +180,7 @@ Public Class RegistrationPage
     Private Sub GovermentTextbox_Leave(sender As Object, e As EventArgs) Handles GovermentTextbox.Leave
         If GovermentTextbox.Text = "" Then
             GovermentTextbox.Text = "Social Security"
-            GovermentTextbox.ForeColor = Color.Silver
+            GovermentTextbox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub BankDetailsTextbox_Enter(sender As Object, e As EventArgs) Handles BankDetailsTextbox.Enter
@@ -193,7 +193,7 @@ Public Class RegistrationPage
     Private Sub BankDetailsTextbox_Leave(sender As Object, e As EventArgs) Handles BankDetailsTextbox.Leave
         If BankDetailsTextbox.Text = "" Then
             BankDetailsTextbox.Text = "12-3913734-2"
-            BankDetailsTextbox.ForeColor = Color.Silver
+            BankDetailsTextbox.ForeColor = Color.Black
         End If
     End Sub
     Private Sub TinTextbox_Enter(sender As Object, e As EventArgs) Handles TinTextbox.Enter
@@ -206,7 +206,7 @@ Public Class RegistrationPage
     Private Sub TinTextbox_Leave(sender As Object, e As EventArgs) Handles TinTextbox.Leave
         If TinTextbox.Text = "" Then
             TinTextbox.Text = "123-456-789-000"
-            TinTextbox.ForeColor = Color.Silver
+            TinTextbox.ForeColor = Color.Black
         End If
     End Sub
 

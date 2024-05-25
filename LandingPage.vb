@@ -211,4 +211,11 @@ Public Class LandingPage
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
     End Sub
+
+    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+        Me.Hide()
+        Dim Payrollsummaryreport As New Payrollsummaryreport(userID)
+        Payrollsummaryreport.ShowDialog()
+        Me.Close()
+    End Sub
 End Class
