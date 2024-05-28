@@ -86,7 +86,7 @@ Public Class LoginPage
                 landingPage.Show()
             ElseIf userPosition.ToLower() = "user" Then
                 ' Open the desired executable file for users
-                Process.Start("D:\Github Repos\UserSideWithCalculation\UserSideWithCalculation\bin\Debug\net8.0-windows\UserSideWithCalculation.exe")
+                Process.Start("C:\Users\rocky\Documents\GitHub\UserSideWithCalculation\UserSideWithCalculation\bin\Debug\net8.0-windows\UserSideWithCalculation")
             Else
                 MessageBox.Show("Invalid position!")
             End If
