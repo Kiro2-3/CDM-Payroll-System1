@@ -36,11 +36,9 @@ Partial Class LoginPage
         PictureBox4 = New PictureBox()
         PictureBox3 = New PictureBox()
         LinkLabel1 = New LinkLabel()
-        RememberCredentials = New CheckBox()
         PasswordField = New TextBox()
         UsernameField = New TextBox()
         Panel6 = New Panel()
-        RegistrationButton = New Button()
         LoginButton = New Button()
         RichTextBox1 = New RichTextBox()
         Panel1.SuspendLayout()
@@ -174,7 +172,6 @@ Partial Class LoginPage
         Panel5.Controls.Add(PictureBox4)
         Panel5.Controls.Add(PictureBox3)
         Panel5.Controls.Add(LinkLabel1)
-        Panel5.Controls.Add(RememberCredentials)
         Panel5.Controls.Add(PasswordField)
         Panel5.Controls.Add(UsernameField)
         Panel5.Dock = DockStyle.Top
@@ -186,9 +183,9 @@ Partial Class LoginPage
         ' PictureBox4
         ' 
         PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
-        PictureBox4.Location = New Point(16, 97)
+        PictureBox4.Location = New Point(12, 96)
         PictureBox4.Name = "PictureBox4"
-        PictureBox4.Size = New Size(84, 54)
+        PictureBox4.Size = New Size(84, 55)
         PictureBox4.SizeMode = PictureBoxSizeMode.Zoom
         PictureBox4.TabIndex = 5
         PictureBox4.TabStop = False
@@ -208,24 +205,12 @@ Partial Class LoginPage
         LinkLabel1.AutoSize = True
         LinkLabel1.Font = New Font("Verdana", 9F)
         LinkLabel1.LinkColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
-        LinkLabel1.Location = New Point(246, 184)
+        LinkLabel1.Location = New Point(142, 188)
         LinkLabel1.Name = "LinkLabel1"
         LinkLabel1.Size = New Size(121, 14)
         LinkLabel1.TabIndex = 3
         LinkLabel1.TabStop = True
         LinkLabel1.Text = "Forgot password?"
-        ' 
-        ' RememberCredentials
-        ' 
-        RememberCredentials.AutoSize = True
-        RememberCredentials.Font = New Font("Verdana", 9F)
-        RememberCredentials.ForeColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
-        RememberCredentials.Location = New Point(27, 184)
-        RememberCredentials.Name = "RememberCredentials"
-        RememberCredentials.Size = New Size(116, 18)
-        RememberCredentials.TabIndex = 2
-        RememberCredentials.Text = "Remember me"
-        RememberCredentials.UseVisualStyleBackColor = True
         ' 
         ' PasswordField
         ' 
@@ -253,7 +238,6 @@ Partial Class LoginPage
         ' Panel6
         ' 
         Panel6.BackColor = Color.White
-        Panel6.Controls.Add(RegistrationButton)
         Panel6.Controls.Add(LoginButton)
         Panel6.Location = New Point(7, 353)
         Panel6.Margin = New Padding(8, 3, 8, 3)
@@ -261,19 +245,6 @@ Partial Class LoginPage
         Panel6.Padding = New Padding(20, 0, 20, 0)
         Panel6.Size = New Size(360, 46)
         Panel6.TabIndex = 6
-        ' 
-        ' RegistrationButton
-        ' 
-        RegistrationButton.Dock = DockStyle.Right
-        RegistrationButton.FlatStyle = FlatStyle.Flat
-        RegistrationButton.Font = New Font("Verdana", 12F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        RegistrationButton.ForeColor = Color.FromArgb(CByte(255), CByte(199), CByte(0))
-        RegistrationButton.Location = New Point(238, 0)
-        RegistrationButton.Name = "RegistrationButton"
-        RegistrationButton.Size = New Size(102, 46)
-        RegistrationButton.TabIndex = 3
-        RegistrationButton.Text = "Register"
-        RegistrationButton.UseVisualStyleBackColor = True
         ' 
         ' LoginButton
         ' 
@@ -284,7 +255,7 @@ Partial Class LoginPage
         LoginButton.ForeColor = Color.White
         LoginButton.Location = New Point(20, 0)
         LoginButton.Name = "LoginButton"
-        LoginButton.Size = New Size(127, 46)
+        LoginButton.Size = New Size(345, 46)
         LoginButton.TabIndex = 1
         LoginButton.Text = "Login"
         LoginButton.UseVisualStyleBackColor = False
@@ -338,10 +309,8 @@ Partial Class LoginPage
     Friend WithEvents Panel5 As Panel
     Friend WithEvents Panel6 As Panel
     Friend WithEvents LoginButton As Button
-    Friend WithEvents RegistrationButton As Button
     Friend WithEvents UsernameField As TextBox
     Friend WithEvents PasswordField As TextBox
-    Friend WithEvents RememberCredentials As CheckBox
     Friend WithEvents LinkLabel1 As LinkLabel
     Friend WithEvents PictureBox3 As PictureBox
     Friend WithEvents PictureBox4 As PictureBox

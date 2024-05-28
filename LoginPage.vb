@@ -56,12 +56,7 @@ Public Class LoginPage
         End If
     End Sub
 
-    Private Sub RegistrationButton_Click(sender As Object, e As EventArgs) Handles RegistrationButton.Click
-        Me.Hide()
-        Dim registrationForm As New RegistrationPage()
-        registrationForm.ShowDialog()
-        Me.Close()
-    End Sub
+
 
     Private Sub ExitLogin(sender As Object, e As EventArgs) Handles CloseButton.Click
         Me.Close()

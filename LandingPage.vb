@@ -217,12 +217,6 @@ Public Class LandingPage
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         ShowFormInPanel2(maindashboard1)
-        Dim Button1 As Button = CType(sender, Button)
-
-        ' Change the properties of the button to alter its design
-        Button1.BackColor = Color.Gold
-        Button1.ForeColor = Color.Gold
-        Button1.Font = New Font("Arial", 14, FontStyle.Bold)
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -231,6 +225,7 @@ Public Class LandingPage
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        ShowFormInPanel8(attendance)
     End Sub
 
     Private Sub RevertButton_Click(sender As Object, e As EventArgs)
@@ -245,6 +240,11 @@ Public Class LandingPage
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        ShowFormInPanel9(accountconfig)
+        ShowFormInPanel8(accountconfig)
+    End Sub
+
+    Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
+        ' Minimize the form
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class

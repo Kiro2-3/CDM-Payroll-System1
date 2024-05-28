@@ -48,6 +48,7 @@ Partial Class RegisterInstructor
         Panel1 = New Panel()
         Label2 = New Label()
         PictureBox3 = New PictureBox()
+        PictureBox1 = New PictureBox()
         TabPage2.SuspendLayout()
         TabPage3.SuspendLayout()
         RegistrationTab.SuspendLayout()
@@ -55,11 +56,12 @@ Partial Class RegisterInstructor
         Panel3.SuspendLayout()
         Panel1.SuspendLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' LastNameTextbox
         ' 
-        LastNameTextbox.BackColor = Color.Gold
+        LastNameTextbox.BackColor = Color.White
         LastNameTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         LastNameTextbox.ForeColor = Color.FromArgb(CByte(199), CByte(199), CByte(199))
         LastNameTextbox.Location = New Point(22, 146)
@@ -70,7 +72,7 @@ Partial Class RegisterInstructor
         ' 
         ' MiddleNameTextbox
         ' 
-        MiddleNameTextbox.BackColor = Color.Gold
+        MiddleNameTextbox.BackColor = Color.White
         MiddleNameTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         MiddleNameTextbox.ForeColor = Color.FromArgb(CByte(199), CByte(199), CByte(199))
         MiddleNameTextbox.Location = New Point(22, 91)
@@ -81,7 +83,7 @@ Partial Class RegisterInstructor
         ' 
         ' FirstNameTextbox
         ' 
-        FirstNameTextbox.BackColor = Color.Gold
+        FirstNameTextbox.BackColor = Color.White
         FirstNameTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         FirstNameTextbox.ForeColor = Color.FromArgb(CByte(199), CByte(199), CByte(199))
         FirstNameTextbox.Location = New Point(23, 24)
@@ -92,7 +94,7 @@ Partial Class RegisterInstructor
         ' 
         ' TabPage2
         ' 
-        TabPage2.BackColor = Color.Gold
+        TabPage2.BackColor = Color.White
         TabPage2.Controls.Add(DepartmentDropdown)
         TabPage2.Controls.Add(AddressTextbox)
         TabPage2.Controls.Add(ContactTextbox)
@@ -101,25 +103,25 @@ Partial Class RegisterInstructor
         TabPage2.Location = New Point(4, 24)
         TabPage2.Name = "TabPage2"
         TabPage2.Padding = New Padding(3)
-        TabPage2.Size = New Size(519, 710)
+        TabPage2.Size = New Size(519, 768)
         TabPage2.TabIndex = 1
         TabPage2.Text = "Institution"
         ' 
         ' DepartmentDropdown
         ' 
-        DepartmentDropdown.BackColor = Color.Gold
+        DepartmentDropdown.BackColor = Color.White
         DepartmentDropdown.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         DepartmentDropdown.ForeColor = SystemColors.WindowFrame
         DepartmentDropdown.FormattingEnabled = True
         DepartmentDropdown.Location = New Point(24, 192)
         DepartmentDropdown.Name = "DepartmentDropdown"
-        DepartmentDropdown.Size = New Size(364, 40)
+        DepartmentDropdown.Size = New Size(375, 40)
         DepartmentDropdown.TabIndex = 27
         DepartmentDropdown.Text = "DEPARTMENT"
         ' 
         ' AddressTextbox
         ' 
-        AddressTextbox.BackColor = Color.Gold
+        AddressTextbox.BackColor = Color.White
         AddressTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         AddressTextbox.ForeColor = Color.FromArgb(CByte(199), CByte(199), CByte(199))
         AddressTextbox.Location = New Point(24, 133)
@@ -130,7 +132,7 @@ Partial Class RegisterInstructor
         ' 
         ' ContactTextbox
         ' 
-        ContactTextbox.BackColor = Color.Gold
+        ContactTextbox.BackColor = Color.White
         ContactTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         ContactTextbox.ForeColor = Color.FromArgb(CByte(199), CByte(199), CByte(199))
         ContactTextbox.Location = New Point(24, 78)
@@ -141,7 +143,7 @@ Partial Class RegisterInstructor
         ' 
         ' EmailTextbox
         ' 
-        EmailTextbox.BackColor = Color.Gold
+        EmailTextbox.BackColor = Color.White
         EmailTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         EmailTextbox.ForeColor = Color.FromArgb(CByte(199), CByte(199), CByte(199))
         EmailTextbox.Location = New Point(24, 27)
@@ -153,24 +155,25 @@ Partial Class RegisterInstructor
         ' FemaleRadioButton
         ' 
         FemaleRadioButton.AutoSize = True
+        FemaleRadioButton.BackColor = Color.White
         FemaleRadioButton.Location = New Point(175, 4)
         FemaleRadioButton.Name = "FemaleRadioButton"
         FemaleRadioButton.Size = New Size(142, 36)
         FemaleRadioButton.TabIndex = 1
         FemaleRadioButton.TabStop = True
         FemaleRadioButton.Text = "Female"
-        FemaleRadioButton.UseVisualStyleBackColor = True
+        FemaleRadioButton.UseVisualStyleBackColor = False
         ' 
         ' TabPage3
         ' 
-        TabPage3.BackColor = Color.Gold
+        TabPage3.BackColor = Color.White
         TabPage3.Controls.Add(CompleteRegistration)
         TabPage3.Controls.Add(TinTextbox)
         TabPage3.Controls.Add(BankDetailsTextbox)
         TabPage3.Controls.Add(GovermentTextbox)
         TabPage3.Location = New Point(4, 24)
         TabPage3.Name = "TabPage3"
-        TabPage3.Size = New Size(519, 710)
+        TabPage3.Size = New Size(519, 768)
         TabPage3.TabIndex = 2
         TabPage3.Text = "Identification"
         ' 
@@ -180,16 +183,16 @@ Partial Class RegisterInstructor
         CompleteRegistration.FlatStyle = FlatStyle.Flat
         CompleteRegistration.Font = New Font("Verdana", 9.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         CompleteRegistration.ForeColor = Color.White
-        CompleteRegistration.Location = New Point(411, 650)
+        CompleteRegistration.Location = New Point(21, 691)
         CompleteRegistration.Name = "CompleteRegistration"
-        CompleteRegistration.Size = New Size(76, 43)
+        CompleteRegistration.Size = New Size(464, 65)
         CompleteRegistration.TabIndex = 6
         CompleteRegistration.Text = "Register"
         CompleteRegistration.UseVisualStyleBackColor = False
         ' 
         ' TinTextbox
         ' 
-        TinTextbox.BackColor = Color.Gold
+        TinTextbox.BackColor = Color.White
         TinTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         TinTextbox.ForeColor = SystemColors.ControlDarkDark
         TinTextbox.Location = New Point(31, 141)
@@ -200,7 +203,7 @@ Partial Class RegisterInstructor
         ' 
         ' BankDetailsTextbox
         ' 
-        BankDetailsTextbox.BackColor = Color.Gold
+        BankDetailsTextbox.BackColor = Color.White
         BankDetailsTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         BankDetailsTextbox.ForeColor = SystemColors.ControlDarkDark
         BankDetailsTextbox.Location = New Point(31, 86)
@@ -211,7 +214,7 @@ Partial Class RegisterInstructor
         ' 
         ' GovermentTextbox
         ' 
-        GovermentTextbox.BackColor = Color.Gold
+        GovermentTextbox.BackColor = Color.White
         GovermentTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         GovermentTextbox.ForeColor = SystemColors.ControlDarkDark
         GovermentTextbox.Location = New Point(31, 35)
@@ -239,12 +242,12 @@ Partial Class RegisterInstructor
         RegistrationTab.Location = New Point(12, 13)
         RegistrationTab.Name = "RegistrationTab"
         RegistrationTab.SelectedIndex = 0
-        RegistrationTab.Size = New Size(527, 738)
+        RegistrationTab.Size = New Size(527, 796)
         RegistrationTab.TabIndex = 7
         ' 
         ' TabPage1
         ' 
-        TabPage1.BackColor = Color.Gold
+        TabPage1.BackColor = Color.White
         TabPage1.Controls.Add(FirstNameTextbox)
         TabPage1.Controls.Add(Label1)
         TabPage1.Controls.Add(PasswordTextbox)
@@ -257,7 +260,7 @@ Partial Class RegisterInstructor
         TabPage1.Location = New Point(4, 24)
         TabPage1.Name = "TabPage1"
         TabPage1.Padding = New Padding(3)
-        TabPage1.Size = New Size(519, 710)
+        TabPage1.Size = New Size(519, 768)
         TabPage1.TabIndex = 0
         TabPage1.Text = "Basic information"
         ' 
@@ -273,7 +276,7 @@ Partial Class RegisterInstructor
         ' 
         ' PasswordTextbox
         ' 
-        PasswordTextbox.BackColor = Color.Gold
+        PasswordTextbox.BackColor = Color.White
         PasswordTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         PasswordTextbox.ForeColor = Color.FromArgb(CByte(199), CByte(199), CByte(199))
         PasswordTextbox.Location = New Point(22, 373)
@@ -284,7 +287,7 @@ Partial Class RegisterInstructor
         ' 
         ' UsernameTextbox
         ' 
-        UsernameTextbox.BackColor = Color.Gold
+        UsernameTextbox.BackColor = Color.White
         UsernameTextbox.Font = New Font("Verdana", 20.25F, FontStyle.Bold)
         UsernameTextbox.ForeColor = Color.FromArgb(CByte(199), CByte(199), CByte(199))
         UsernameTextbox.Location = New Point(23, 317)
@@ -319,6 +322,7 @@ Partial Class RegisterInstructor
         ' Panel1
         ' 
         Panel1.BackColor = Color.Gold
+        Panel1.Controls.Add(PictureBox1)
         Panel1.Controls.Add(Label2)
         Panel1.Controls.Add(RegistrationTab)
         Panel1.Controls.Add(PictureBox3)
@@ -331,22 +335,33 @@ Partial Class RegisterInstructor
         ' 
         Label2.AutoSize = True
         Label2.BorderStyle = BorderStyle.FixedSingle
-        Label2.Font = New Font("Sitka Text", 18.0F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(558, 28)
+        Label2.Font = New Font("Sitka Text", 18.0F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(587, 28)
         Label2.Name = "Label2"
-        Label2.Size = New Size(770, 142)
+        Label2.Size = New Size(792, 142)
         Label2.TabIndex = 8
         Label2.Text = "Take note : " & vbCrLf & "Always double check the informations                                              " & vbCrLf & "inserted to avoid any discepancies regards" & vbCrLf & "with the account."
         ' 
         ' PictureBox3
         ' 
         PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), Image)
-        PictureBox3.Location = New Point(558, 173)
+        PictureBox3.Location = New Point(587, 173)
         PictureBox3.Name = "PictureBox3"
         PictureBox3.Size = New Size(641, 629)
         PictureBox3.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox3.TabIndex = 9
         PictureBox3.TabStop = False
+        ' 
+        ' PictureBox1
+        ' 
+        PictureBox1.BackColor = Color.Transparent
+        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
+        PictureBox1.Location = New Point(1069, 173)
+        PictureBox1.Name = "PictureBox1"
+        PictureBox1.Size = New Size(215, 220)
+        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox1.TabIndex = 10
+        PictureBox1.TabStop = False
         ' 
         ' RegisterInstructor
         ' 
@@ -371,6 +386,7 @@ Partial Class RegisterInstructor
         Panel1.ResumeLayout(False)
         Panel1.PerformLayout()
         CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
@@ -399,4 +415,5 @@ Partial Class RegisterInstructor
     Friend WithEvents Panel1 As Panel
     Friend WithEvents Label2 As Label
     Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

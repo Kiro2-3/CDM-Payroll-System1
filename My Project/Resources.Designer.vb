@@ -123,6 +123,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property Screenshot_2024_05_28_104806() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("Screenshot 2024-05-28 104806", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property tumblr_f73631b9e9cd29eeef31e1a7606af046_abb03b8b_500() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("tumblr_f73631b9e9cd29eeef31e1a7606af046_abb03b8b_500", resourceCulture)
@@ -236,6 +246,16 @@ Namespace My.Resources
         Friend ReadOnly Property wired_lineal_19_magnifier_zoom_search() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("wired-lineal-19-magnifier-zoom-search", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property wired_lineal_212_arrow_1_rounded() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wired-lineal-212-arrow-1-rounded", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

@@ -27,7 +27,6 @@ Partial Class accountconfig
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        PictureBox15 = New PictureBox()
         Panel4 = New Panel()
         RichTextBox1 = New RichTextBox()
         searchButton = New Button()
@@ -38,23 +37,11 @@ Partial Class accountconfig
         DataGridView1 = New DataGridView()
         Column4 = New DataGridViewTextBoxColumn()
         PictureBox13 = New PictureBox()
-        CType(PictureBox15, ComponentModel.ISupportInitialize).BeginInit()
         Panel4.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' PictureBox15
-        ' 
-        PictureBox15.BackColor = Color.Gold
-        PictureBox15.Dock = DockStyle.Fill
-        PictureBox15.Location = New Point(0, 0)
-        PictureBox15.Name = "PictureBox15"
-        PictureBox15.Size = New Size(1632, 1050)
-        PictureBox15.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox15.TabIndex = 0
-        PictureBox15.TabStop = False
         ' 
         ' Panel4
         ' 
@@ -68,19 +55,17 @@ Partial Class accountconfig
         Panel4.Controls.Add(Button1)
         Panel4.Controls.Add(DataGridView1)
         Panel4.Controls.Add(PictureBox13)
-        Panel4.Controls.Add(PictureBox15)
-        Panel4.Dock = DockStyle.Fill
-        Panel4.Location = New Point(0, 0)
+        Panel4.Location = New Point(0, 2)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(1632, 1050)
+        Panel4.Size = New Size(1583, 940)
         Panel4.TabIndex = 5
         ' 
         ' RichTextBox1
         ' 
         RichTextBox1.Font = New Font("Segoe UI", 15.0F)
-        RichTextBox1.Location = New Point(1089, 402)
+        RichTextBox1.Location = New Point(1060, 564)
         RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(258, 118)
+        RichTextBox1.Size = New Size(293, 141)
         RichTextBox1.TabIndex = 34
         RichTextBox1.Text = ""
         ' 
@@ -91,7 +76,7 @@ Partial Class accountconfig
         searchButton.FlatStyle = FlatStyle.Flat
         searchButton.ForeColor = SystemColors.Window
         searchButton.Image = CType(resources.GetObject("searchButton.Image"), Image)
-        searchButton.Location = New Point(215, 69)
+        searchButton.Location = New Point(224, 345)
         searchButton.Name = "searchButton"
         searchButton.Size = New Size(50, 48)
         searchButton.TabIndex = 33
@@ -100,7 +85,7 @@ Partial Class accountconfig
         ' searchTextBox
         ' 
         searchTextBox.Font = New Font("Segoe UI", 22.0F)
-        searchTextBox.Location = New Point(12, 70)
+        searchTextBox.Location = New Point(9, 346)
         searchTextBox.Name = "searchTextBox"
         searchTextBox.Size = New Size(197, 47)
         searchTextBox.TabIndex = 32
@@ -109,7 +94,7 @@ Partial Class accountconfig
         ' 
         PictureBox1.BackColor = Color.Gold
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(356, 0)
+        PictureBox1.Location = New Point(359, 12)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(374, 105)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -122,9 +107,9 @@ Partial Class accountconfig
         Button2.BackgroundImage = My.Resources.Resources.Vanilla_1x_3_7s_108px_35px
         Button2.BackgroundImageLayout = ImageLayout.Center
         Button2.Image = CType(resources.GetObject("Button2.Image"), Image)
-        Button2.Location = New Point(9, 767)
+        Button2.Location = New Point(1060, 812)
         Button2.Name = "Button2"
-        Button2.Size = New Size(1031, 50)
+        Button2.Size = New Size(293, 50)
         Button2.TabIndex = 25
         Button2.UseVisualStyleBackColor = False
         ' 
@@ -134,9 +119,9 @@ Partial Class accountconfig
         Button1.BackgroundImage = My.Resources.Resources.Vanilla_1x_3_7s_108px_35px
         Button1.BackgroundImageLayout = ImageLayout.Center
         Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
-        Button1.Location = New Point(9, 711)
+        Button1.Location = New Point(1060, 736)
         Button1.Name = "Button1"
-        Button1.Size = New Size(1031, 50)
+        Button1.Size = New Size(293, 50)
         Button1.TabIndex = 24
         Button1.UseVisualStyleBackColor = False
         ' 
@@ -149,7 +134,7 @@ Partial Class accountconfig
         DataGridViewCellStyle1.SelectionBackColor = Color.SpringGreen
         DataGridViewCellStyle1.SelectionForeColor = Color.Red
         DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridView1.BackgroundColor = Color.Gold
+        DataGridView1.BackgroundColor = Color.White
         DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None
         DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = Color.White
@@ -171,7 +156,7 @@ Partial Class accountconfig
         DataGridViewCellStyle3.WrapMode = DataGridViewTriState.False
         DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         DataGridView1.GridColor = Color.Gold
-        DataGridView1.Location = New Point(9, 123)
+        DataGridView1.Location = New Point(9, 416)
         DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = SystemColors.Control
@@ -182,7 +167,7 @@ Partial Class accountconfig
         DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
         DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         DataGridView1.RowHeadersWidth = 80
-        DataGridView1.Size = New Size(1031, 582)
+        DataGridView1.Size = New Size(1031, 439)
         DataGridView1.TabIndex = 23
         ' 
         ' Column4
@@ -205,12 +190,11 @@ Partial Class accountconfig
         ' 
         AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1632, 1050)
+        ClientSize = New Size(1365, 876)
         Controls.Add(Panel4)
         FormBorderStyle = FormBorderStyle.None
         Name = "accountconfig"
         Text = "accountconfig"
-        CType(PictureBox15, ComponentModel.ISupportInitialize).EndInit()
         Panel4.ResumeLayout(False)
         Panel4.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
@@ -218,8 +202,6 @@ Partial Class accountconfig
         CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
-
-    Friend WithEvents PictureBox15 As PictureBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents searchButton As Button
