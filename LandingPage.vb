@@ -186,6 +186,18 @@ Public Class LandingPage
         ' Show the form
         formToShow.Show()
     End Sub
+    Private Sub ShowFormInPanel9(formToShow As Form)
+        ' Clear previous controls
+        Panel3.Controls.Clear()
+        ' Set the form's TopLevel property to false
+        formToShow.TopLevel = False
+        ' Add the form to the panel
+        Panel4.Controls.Add(formToShow)
+        ' Set the form's Dock property to Fill to fill the panel
+        formToShow.Dock = DockStyle.Fill
+        ' Show the form
+        formToShow.Show()
+    End Sub
 
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
@@ -219,7 +231,6 @@ Public Class LandingPage
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
-
     End Sub
 
     Private Sub RevertButton_Click(sender As Object, e As EventArgs)
@@ -231,5 +242,9 @@ Public Class LandingPage
         myButton.ForeColor = originalForeColor
         myButton.Font = originalFont
         myButton.Text = originalText
+    End Sub
+
+    Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
+        ShowFormInPanel9(accountconfig)
     End Sub
 End Class
