@@ -247,4 +247,8 @@ Public Class LandingPage
         ' Minimize the form
         Me.WindowState = FormWindowState.Minimized
     End Sub
+
+    Private Sub PictureBox16_Click(sender As Object, e As EventArgs) Handles PictureBox16.Click
+
+    End Sub
 End Class

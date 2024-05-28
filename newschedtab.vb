@@ -48,6 +48,8 @@ Public Class newschedtab
                         DataGridView1.Columns.Add("ScheduleColumn", "Schedule")
                         DataGridView1.Columns("ScheduleColumn").DataPropertyName = "Schedule"
 
+
+
                         ' Auto-size columns
                         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
@@ -74,7 +76,7 @@ Public Class newschedtab
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click ' edit 
         If DataGridView1.Rows.Count > 0 Then
             Dim result As DialogResult = MessageBox.Show("Do you want to save the changes?", "Confirm", MessageBoxButtons.YesNo, MessageBoxIcon.Question)
             If result = DialogResult.Yes Then
@@ -120,9 +122,17 @@ Public Class newschedtab
             Try
                 Using conn As New MySqlConnection(connectionString)
                     conn.Open()
-                    Using cmd As New MySqlCommand("DELETE FROM users WHERE id = @id", conn)
-                        cmd.Parameters.AddWithValue("@id", userID)
-                        cmd.ExecuteNonQuery()
+
+                    ' Delete related rows from the salary_info table
+                    Using deleteCmd As New MySqlCommand("DELETE FROM salary_info WHERE id = @id", conn)
+                        deleteCmd.Parameters.AddWithValue("@id", userID)
+                        deleteCmd.ExecuteNonQuery()
+                    End Using
+
+                    ' Delete the user
+                    Using deleteCmd As New MySqlCommand("DELETE FROM users WHERE id = @id", conn)
+                        deleteCmd.Parameters.AddWithValue("@id", userID)
+                        deleteCmd.ExecuteNonQuery()
                     End Using
                 End Using
 
@@ -135,6 +145,7 @@ Public Class newschedtab
             End Try
         End If
     End Sub
+
 
     Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click
         Dim searchTerm As String = searchTextBox.Text.Trim()

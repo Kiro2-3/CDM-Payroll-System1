@@ -26,14 +26,11 @@ Public Class attendance
                     DataTable1.Clear()
                     adapter.Fill(DataTable1)
 
-                    ' Clear any existing columns in the DataGridView
                     DataGridView1.Columns.Clear()
 
                     If DataTable1.Rows.Count > 0 Then
-                        ' Bind the DataTable to the BindingSource
                         BindingSource1.DataSource = DataTable1
 
-                        ' Set column headers and data properties
                         DataGridView1.AutoGenerateColumns = False
 
                         DataGridView1.Columns.Add(New DataGridViewTextBoxColumn With {.HeaderText = "First Name", .DataPropertyName = "first_name", .Name = "FirstNameColumn"})
@@ -42,13 +39,10 @@ Public Class attendance
                         DataGridView1.Columns.Add(New DataGridViewTextBoxColumn With {.HeaderText = "Instructor ID", .DataPropertyName = "id", .Name = "IDColumn"})
                         DataGridView1.Columns.Add(New DataGridViewTextBoxColumn With {.HeaderText = "Attendance", .DataPropertyName = "salary_date", .Name = "SalaryDateColumn"})
 
-                        ' Bind the BindingSource to the DataGridView
                         DataGridView1.DataSource = BindingSource1
 
-                        ' Auto-size columns
                         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
-                        ' Update Label1 with the count of payroll records
                         Label1.Text = "There are currently " & DataTable1.Rows.Count.ToString() & " Attendance records!"
                         Label2.Text = "Today is " & DateTime.Now.ToString("dddd, MMMM dd, yyyy")
                     Else
@@ -63,7 +57,6 @@ Public Class attendance
         End Try
     End Sub
 
-    ' Event handler for CellContentClick event of DataGridView
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
         If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
             Dim clickedCellValue As String = DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString()
@@ -75,34 +68,21 @@ Public Class attendance
         Dim searchTerm As String = searchTextBox.Text.Trim()
 
         If searchTerm.Length > 0 Then
-            ' Build a filter expression for all searchable columns
             Dim filterExpression As String = String.Format("first_name LIKE '%{0}%' OR middle_name LIKE '%{0}%' OR last_name LIKE '%{0}%' OR " &
                                                            "CONVERT(id, 'System.String') LIKE '%{0}%' OR " &
                                                            "CONVERT(salary_date, 'System.String') LIKE '%{0}%'", searchTerm)
 
-            ' Apply the filter to the BindingSource
             BindingSource1.Filter = filterExpression
 
-            ' Check if any rows match the filter
             If BindingSource1.Count = 0 Then
                 MessageBox.Show("No matching data found.")
             End If
         Else
-            ' Clear the filter to show all data
             BindingSource1.RemoveFilter()
         End If
     End Sub
 
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        ' No action needed here
-    End Sub
-
-    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
-        ' No action needed here
-    End Sub
-
     Private Sub PictureBox2_Click(sender As Object, e As EventArgs) Handles PictureBox2.Click
-        ' Refresh the data and update the labels
         LoadDataIntoDataGridView()
     End Sub
 
@@ -137,43 +117,43 @@ Public Class attendance
             MessageBox.Show("No row selected to save.")
         End If
     End Sub
-    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
-        If DataGridView1.SelectedRows.Count = 0 Then
-            MessageBox.Show("No row selected.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
-        End If
 
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         Dim selectedRows As DataGridViewSelectedRowCollection = DataGridView1.SelectedRows
         Dim rowsAffected As Integer = 0
 
-        If MessageBox.Show("Are you sure you want to delete the selected attendance records?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-            Try
-                Using conn As New MySqlConnection(connectionString)
-                    conn.Open()
-                    For Each row As DataGridViewRow In selectedRows
-                        Dim userID As Integer = row.Cells("IDColumn").Value
-                        Dim salaryDate As String = row.Cells("SalaryDateColumn").Value.ToString()
+        If selectedRows.Count > 0 Then
+            If MessageBox.Show("Are you sure you want to delete the selected attendance records?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+                Try
+                    Using conn As New MySqlConnection(connectionString)
+                        conn.Open()
+                        For Each row As DataGridViewRow In selectedRows
+                            Dim userID As Integer = CInt(row.Cells("IDColumn").Value)
+                            Dim salaryDate As Date = CDate(row.Cells("SalaryDateColumn").Value)
 
-                        Dim query As String = "DELETE FROM salary_info WHERE id = @id AND salary_date = @salary_date"
-                        Using cmd As New MySqlCommand(query, conn)
-                            cmd.Parameters.AddWithValue("@id", userID)
-                            cmd.Parameters.AddWithValue("@salary_date", salaryDate)
-                            rowsAffected += cmd.ExecuteNonQuery()
-                        End Using
-                    Next
+                            Dim query As String = "DELETE FROM salary_info WHERE id = @userID AND salary_date = @salaryDate"
+                            Using cmd As New MySqlCommand(query, conn)
+                                cmd.Parameters.AddWithValue("@userID", userID)
+                                cmd.Parameters.AddWithValue("@salaryDate", salaryDate)
+                                rowsAffected += cmd.ExecuteNonQuery()
+                            End Using
+                        Next
 
-                    If rowsAffected > 0 Then
-                        MessageBox.Show("Attendance records deleted successfully.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
-                    Else
-                        MessageBox.Show("No matching records found to delete.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-                    End If
-                End Using
-                LoadDataIntoDataGridView() ' Make sure this method is correctly refreshing the DataGridView
-            Catch ex As MySqlException
-                MessageBox.Show("MySQL Error: " & ex.Message, "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Catch ex As Exception
-                MessageBox.Show("Error deleting attendance records: " & ex.Message, "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
+                        If rowsAffected > 0 Then
+                            MessageBox.Show("Attendance recordswere successfully deleted.")
+                            LoadDataIntoDataGridView()
+                        Else
+                            MessageBox.Show("No attendance records were deleted.")
+                        End If
+                    End Using
+                Catch ex As MySqlException
+                    MessageBox.Show("MySQL Error: " & ex.Message)
+                Catch ex As Exception
+                    MessageBox.Show("Error deleting attendance records: " & ex.Message)
+                End Try
+            End If
+        Else
+            MessageBox.Show("No rows selected for deletion.")
         End If
     End Sub
 End Class

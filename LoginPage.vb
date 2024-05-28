@@ -66,17 +66,36 @@ Public Class LoginPage
         Dim username As String = UsernameField.Text
         Dim password As String = PasswordField.Text
 
+        ' Authenticate user and get user ID
         Dim userID As Integer = dbFunctions.AuthenticateAndGetUserID(username, password)
 
         If userID <> 0 Then
+            ' Hide the login form
             Me.Hide()
-            MessageBox.Show("Login successful!")
-            Dim landingPage As New LandingPage(userID)
-            landingPage.Show()
+
+            ' Retrieve the position of the logged-in user
+            Dim userPosition As String = dbFunctions.GetUserPosition(userID)
+
+            ' Display the position in a message box
+            MessageBox.Show("Logged in as: " & userPosition)
+
+            ' Check if the user is an admin
+            If userPosition.ToLower() = "admin" Then
+                ' Proceed with further actions (e.g., showing a landing page)
+                Dim landingPage As New LandingPage(userID)
+                landingPage.Show()
+            ElseIf userPosition.ToLower() = "user" Then
+                ' Open the desired executable file for users
+                Process.Start("D:\Github Repos\UserSideWithCalculation\UserSideWithCalculation\bin\Debug\net8.0-windows\UserSideWithCalculation.exe")
+            Else
+                MessageBox.Show("Invalid position!")
+            End If
         Else
             MessageBox.Show("Invalid username or password!")
         End If
     End Sub
+
+
 
     Private Sub Panel5_Paint(sender As Object, e As PaintEventArgs) Handles Panel5.Paint
 

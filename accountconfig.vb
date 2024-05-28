@@ -21,9 +21,10 @@ Public Class accountconfig
         End Sub
 
         Private Sub LoadDataIntoDataGridView()
-            Dim query As String = "SELECT first_name, middle_name, last_name, id, department, Schedule FROM users"
+        Dim query As String = "SELECT first_name, middle_name, last_name, id, department, Schedule, birthday, gender, contact_number,username, email,
+                                government_id, bank_details, tin_id FROM users"
 
-            Try
+        Try
                 Using conn As New MySqlConnection(connectionString)
                     conn.Open()
                     Using cmd As New MySqlCommand(query, conn)
@@ -54,8 +55,32 @@ Public Class accountconfig
                             DataGridView1.Columns.Add("ScheduleColumn", "Schedule")
                             DataGridView1.Columns("ScheduleColumn").DataPropertyName = "Schedule"
 
-                            ' Auto-size columns
-                            DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+                        DataGridView1.Columns.Add("UsernameColumn", "Username")
+                        DataGridView1.Columns("UsernameColumn").DataPropertyName = "username"
+
+                        DataGridView1.Columns.Add("EmailColumn", "Email")
+                        DataGridView1.Columns("EmailColumn").DataPropertyName = "email"
+
+                        DataGridView1.Columns.Add("BirthdayColumn", "Birthday")
+                        DataGridView1.Columns("BirthdayColumn").DataPropertyName = "birthday"
+
+                        DataGridView1.Columns.Add("GenderColumn", "Gender")
+                        DataGridView1.Columns("GenderColumn").DataPropertyName = "gender"
+
+                        DataGridView1.Columns.Add("ContactNumberColumn", "ContactNumber")
+                        DataGridView1.Columns("ContactNumberColumn").DataPropertyName = "contact_number"
+
+                        DataGridView1.Columns.Add("GovernmentIdColumn", "GovernmentID")
+                        DataGridView1.Columns("GovernmentIDColumn").DataPropertyName = "government_id"
+
+                        DataGridView1.Columns.Add("TinIDColumn", "TinID")
+                        DataGridView1.Columns("TinIDColumn").DataPropertyName = "tin_id"
+
+                        DataGridView1.Columns.Add("BankDetailsColumn", "BankDetails")
+                        DataGridView1.Columns("BankDetailsColumn").DataPropertyName = "bank_details"
+
+                        ' Auto-size columns
+                        DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
 
                             ' Bind the DataTable to the DataGridView
                             BindingSource1.DataSource = DataTable1
