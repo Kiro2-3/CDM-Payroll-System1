@@ -96,4 +96,36 @@ Public Class payrollsum
     Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
         ' No action needed here
     End Sub
+
+    Private Sub Panel3_Paint(sender As Object, e As PaintEventArgs) Handles Panel3.Paint
+
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        If DataGridView1.SelectedRows.Count = 0 Then
+            MessageBox.Show("No row selected.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            Return
+        End If
+
+        Dim userID As Integer = DataGridView1.SelectedRows(0).Cells("IDColumn").Value
+
+        If MessageBox.Show("Are you sure you want to delete this user?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
+            Try
+                Using conn As New MySqlConnection(connectionString)
+                    conn.Open()
+                    Using cmd As New MySqlCommand("DELETE FROM users WHERE id = @id", conn)
+                        cmd.Parameters.AddWithValue("@id", userID)
+                        cmd.ExecuteNonQuery()
+                    End Using
+                End Using
+
+                LoadDataIntoDataGridView()
+                MessageBox.Show("User deleted successfully.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Catch ex As MySqlException
+                MessageBox.Show("MySQL Error: " & ex.Message, "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            Catch ex As Exception
+                MessageBox.Show("Error deleting user: " & ex.Message, "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End If
+    End Sub
 End Class

@@ -225,6 +225,7 @@ Public Class LandingPage
     End Sub
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
+        ShowFormInPanel8(attendance)
     End Sub
 
     Private Sub RevertButton_Click(sender As Object, e As EventArgs)
@@ -239,6 +240,11 @@ Public Class LandingPage
     End Sub
 
     Private Sub Button5_Click(sender As Object, e As EventArgs) Handles Button5.Click
-        ShowFormInPanel9(accountconfig)
+        ShowFormInPanel8(accountconfig)
+    End Sub
+
+    Private Sub PictureBox14_Click(sender As Object, e As EventArgs) Handles PictureBox14.Click
+        ' Minimize the form
+        Me.WindowState = FormWindowState.Minimized
     End Sub
 End Class
