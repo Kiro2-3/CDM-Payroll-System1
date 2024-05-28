@@ -4,7 +4,7 @@ Public Class DatabaseFunctions
     Inherits DatabaseConnection
 
     Public Overrides Function AuthenticateUser(username As String, password As String) As Boolean
-        Dim query As String = "SELECT COUNT(*) FROM users WHERE username = @username AND password = @password"
+        Dim query As String = "SELECT COUNT(*) FROM users WHERE username = @username AND password_hash = @password"
         Dim count As Integer = 0
 
         Try
@@ -107,7 +107,7 @@ Public Class DatabaseFunctions
     End Function
     Public Function AuthenticateAndGetUserID(username As String, password As String) As Integer
         Dim userID As Integer = 0
-        Dim query As String = "SELECT id FROM users WHERE username = @username AND password = @password"
+        Dim query As String = "SELECT id FROM users WHERE username = @username AND password_hash = @password"
 
         Try
             conn.Open()
@@ -127,5 +127,28 @@ Public Class DatabaseFunctions
 
         Return userID
     End Function
+
+    Public Function GetUserPosition(userID As Integer) As String
+        Dim position As String = ""
+
+        Try
+            conn.Open()
+            Dim query As String = "SELECT position FROM users WHERE id = @userID"
+            Dim cmd As New MySqlCommand(query, conn)
+            cmd.Parameters.AddWithValue("@userID", userID)
+            Dim result As Object = cmd.ExecuteScalar()
+
+            If result IsNot Nothing AndAlso Not DBNull.Value.Equals(result) Then
+                position = Convert.ToString(result)
+            End If
+        Catch ex As Exception
+            MessageBox.Show("Error: " & ex.Message)
+        Finally
+            conn.Close()
+        End Try
+
+        Return position
+    End Function
+
 
 End Class

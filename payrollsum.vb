@@ -101,31 +101,28 @@ Public Class payrollsum
 
     End Sub
 
-    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
-        If DataGridView1.SelectedRows.Count = 0 Then
-            MessageBox.Show("No row selected.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning)
-            Return
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click ' edit 
+        If DataGridView1.SelectedRows.Count > 0 Then
+            If RichTextBox1.Text.Trim() <> "" Then
+                Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+                Dim selectedColumnIndex As Integer = DataGridView1.CurrentCell.ColumnIndex
+                selectedRow.Cells(selectedColumnIndex).Value = RichTextBox1.Text.Trim()
+                MessageBox.Show("Value updated successfully.", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Information)
+            Else
+                MessageBox.Show("Please enter a value in the RichTextBox.", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            End If
+        Else
+            MessageBox.Show("No row selected.", "Edit", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
+    End Sub
 
-        Dim userID As Integer = DataGridView1.SelectedRows(0).Cells("IDColumn").Value
-
-        If MessageBox.Show("Are you sure you want to delete this user?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question) = DialogResult.Yes Then
-            Try
-                Using conn As New MySqlConnection(connectionString)
-                    conn.Open()
-                    Using cmd As New MySqlCommand("DELETE FROM users WHERE id = @id", conn)
-                        cmd.Parameters.AddWithValue("@id", userID)
-                        cmd.ExecuteNonQuery()
-                    End Using
-                End Using
-
-                LoadDataIntoDataGridView()
-                MessageBox.Show("User deleted successfully.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
-            Catch ex As MySqlException
-                MessageBox.Show("MySQL Error: " & ex.Message, "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            Catch ex As Exception
-                MessageBox.Show("Error deleting user: " & ex.Message, "Delete", MessageBoxButtons.OK, MessageBoxIcon.Error)
-            End Try
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click ' delete 
+        If DataGridView1.SelectedRows.Count > 0 Then
+            Dim selectedRow As DataGridViewRow = DataGridView1.SelectedRows(0)
+            DataGridView1.Rows.Remove(selectedRow)
+            MessageBox.Show("Row deleted successfully.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Information)
+        Else
+            MessageBox.Show("No row selected.", "Delete", MessageBoxButtons.OK, MessageBoxIcon.Warning)
         End If
     End Sub
 End Class

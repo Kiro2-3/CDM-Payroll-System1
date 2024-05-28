@@ -235,6 +235,7 @@ Partial Class payrollsum
         DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
         DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         DataGridView1.RowHeadersWidth = 80
+        DataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect
         DataGridView1.Size = New Size(946, 349)
         DataGridView1.TabIndex = 29
         ' 
