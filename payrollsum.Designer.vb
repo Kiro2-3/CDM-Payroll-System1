@@ -34,6 +34,7 @@ Partial Class payrollsum
         DataGridView1 = New DataGridView()
         Button1 = New Button()
         PictureBox13 = New PictureBox()
+        RichTextBox1 = New RichTextBox()
         Panel3.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -44,6 +45,7 @@ Partial Class payrollsum
         ' 
         Panel3.BackColor = Color.Gold
         Panel3.BackgroundImageLayout = ImageLayout.Stretch
+        Panel3.Controls.Add(RichTextBox1)
         Panel3.Controls.Add(searchButton)
         Panel3.Controls.Add(searchTextBox)
         Panel3.Controls.Add(PictureBox1)
@@ -151,6 +153,14 @@ Partial Class payrollsum
         PictureBox13.TabIndex = 22
         PictureBox13.TabStop = False
         ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.Location = New Point(1122, 530)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.Size = New Size(432, 258)
+        RichTextBox1.TabIndex = 33
+        RichTextBox1.Text = ""
+        ' 
         ' payrollsum
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
@@ -175,4 +185,5 @@ Partial Class payrollsum
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents searchTextBox As TextBox
     Friend WithEvents searchButton As Button
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class

@@ -223,6 +223,16 @@ Namespace My.Resources
         '''<summary>
         '''  Looks up a localized resource of type System.Drawing.Bitmap.
         '''</summary>
+        Friend ReadOnly Property wired_lineal_153_bar_chart() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("wired-lineal-153-bar-chart", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Looks up a localized resource of type System.Drawing.Bitmap.
+        '''</summary>
         Friend ReadOnly Property wired_lineal_19_magnifier_zoom_search() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("wired-lineal-19-magnifier-zoom-search", resourceCulture)

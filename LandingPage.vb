@@ -7,6 +7,10 @@ Public Class LandingPage
     Private shiftStartTime As DateTime
     Private shiftStarted As Boolean = False
     Private connectionString As String = "server=localhost;user=root;database=cdmips;port=3306;password="
+    Private originalBackColor As Color
+    Private originalForeColor As Color
+    Private originalFont As Font
+    Private originalText As String
     Private userID As Integer
 
     Public Sub New(userID As Integer)
@@ -201,6 +205,12 @@ Public Class LandingPage
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         ShowFormInPanel2(maindashboard1)
+        Dim Button1 As Button = CType(sender, Button)
+
+        ' Change the properties of the button to alter its design
+        Button1.BackColor = Color.Gold
+        Button1.ForeColor = Color.Gold
+        Button1.Font = New Font("Arial", 14, FontStyle.Bold)
     End Sub
 
     Private Sub Button6_Click(sender As Object, e As EventArgs) Handles Button6.Click
@@ -210,5 +220,16 @@ Public Class LandingPage
 
     Private Sub Button4_Click(sender As Object, e As EventArgs) Handles Button4.Click
 
+    End Sub
+
+    Private Sub RevertButton_Click(sender As Object, e As EventArgs)
+        ' Find the main button by its name
+        Dim myButton As Button = CType(Me.Controls("MyButton"), Button)
+
+        ' Revert the properties of the main button to the original design
+        myButton.BackColor = originalBackColor
+        myButton.ForeColor = originalForeColor
+        myButton.Font = originalFont
+        myButton.Text = originalText
     End Sub
 End Class
