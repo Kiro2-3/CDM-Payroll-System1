@@ -29,7 +29,6 @@ Public Class payrollsum
                         ' Bind the DataTable to the BindingSource
                         BindingSource1.DataSource = DataTable1
 
-
                         ' Set column headers and data properties
                         DataGridView1.AutoGenerateColumns = False
 
@@ -47,6 +46,9 @@ Public Class payrollsum
 
                         ' Auto-size columns
                         DataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill
+
+                        ' Update Label1 with the count of payroll records
+                        Label1.Text = "There are currently " & DataTable1.Rows.Count.ToString() & " payroll records!"
                     Else
                         MessageBox.Show("No data found.")
                     End If
@@ -90,5 +92,7 @@ Public Class payrollsum
         End If
     End Sub
 
-
+    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
+        ' No action needed here
+    End Sub
 End Class

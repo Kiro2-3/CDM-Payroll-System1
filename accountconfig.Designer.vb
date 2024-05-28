@@ -27,7 +27,6 @@ Partial Class accountconfig
         Dim DataGridViewCellStyle2 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
-        PictureBox15 = New PictureBox()
         Panel4 = New Panel()
         RichTextBox1 = New RichTextBox()
         searchButton = New Button()
@@ -38,23 +37,11 @@ Partial Class accountconfig
         DataGridView1 = New DataGridView()
         Column4 = New DataGridViewTextBoxColumn()
         PictureBox13 = New PictureBox()
-        CType(PictureBox15, ComponentModel.ISupportInitialize).BeginInit()
         Panel4.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' PictureBox15
-        ' 
-        PictureBox15.BackColor = Color.Gold
-        PictureBox15.Dock = DockStyle.Fill
-        PictureBox15.Location = New Point(0, 0)
-        PictureBox15.Name = "PictureBox15"
-        PictureBox15.Size = New Size(1632, 1050)
-        PictureBox15.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox15.TabIndex = 0
-        PictureBox15.TabStop = False
         ' 
         ' Panel4
         ' 
@@ -68,17 +55,15 @@ Partial Class accountconfig
         Panel4.Controls.Add(Button1)
         Panel4.Controls.Add(DataGridView1)
         Panel4.Controls.Add(PictureBox13)
-        Panel4.Controls.Add(PictureBox15)
-        Panel4.Dock = DockStyle.Fill
-        Panel4.Location = New Point(0, 0)
+        Panel4.Location = New Point(0, 48)
         Panel4.Name = "Panel4"
-        Panel4.Size = New Size(1632, 1050)
+        Panel4.Size = New Size(1583, 894)
         Panel4.TabIndex = 5
         ' 
         ' RichTextBox1
         ' 
         RichTextBox1.Font = New Font("Segoe UI", 15.0F)
-        RichTextBox1.Location = New Point(1089, 402)
+        RichTextBox1.Location = New Point(1095, 365)
         RichTextBox1.Name = "RichTextBox1"
         RichTextBox1.Size = New Size(258, 118)
         RichTextBox1.TabIndex = 34
@@ -109,7 +94,7 @@ Partial Class accountconfig
         ' 
         PictureBox1.BackColor = Color.Gold
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(356, 0)
+        PictureBox1.Location = New Point(359, 12)
         PictureBox1.Name = "PictureBox1"
         PictureBox1.Size = New Size(374, 105)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
@@ -205,12 +190,11 @@ Partial Class accountconfig
         ' 
         AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1632, 1050)
+        ClientSize = New Size(1365, 876)
         Controls.Add(Panel4)
         FormBorderStyle = FormBorderStyle.None
         Name = "accountconfig"
         Text = "accountconfig"
-        CType(PictureBox15, ComponentModel.ISupportInitialize).EndInit()
         Panel4.ResumeLayout(False)
         Panel4.PerformLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
@@ -218,8 +202,6 @@ Partial Class accountconfig
         CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
-
-    Friend WithEvents PictureBox15 As PictureBox
     Friend WithEvents Panel4 As Panel
     Friend WithEvents RichTextBox1 As RichTextBox
     Friend WithEvents searchButton As Button
