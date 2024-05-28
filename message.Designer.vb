@@ -225,6 +225,7 @@ Partial Class message
         DataGridView1.DefaultCellStyle = DataGridViewCellStyle3
         DataGridView1.GridColor = Color.Gold
         DataGridView1.Location = New Point(273, 535)
+        DataGridView1.MultiSelect = False
         DataGridView1.Name = "DataGridView1"
         DataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle4.BackColor = SystemColors.Control
