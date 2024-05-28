@@ -494,7 +494,7 @@ Partial Class LandingPage
         ' 
         ' PictureBox15
         ' 
-        PictureBox15.BackColor = Color.Gold
+        PictureBox15.BackColor = Color.White
         PictureBox15.Location = New Point(6, 6)
         PictureBox15.Name = "PictureBox15"
         PictureBox15.Size = New Size(1388, 873)
