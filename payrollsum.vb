@@ -61,7 +61,10 @@ Public Class payrollsum
 
     ' Event handler for CellContentClick event of DataGridView
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        ' Add your code here to handle cell click events if needed
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+            Dim clickedCellValue As String = DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString()
+            RichTextBox1.Text = clickedCellValue
+        End If
     End Sub
 
     Private Sub searchButton_Click(sender As Object, e As EventArgs) Handles searchButton.Click

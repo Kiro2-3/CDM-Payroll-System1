@@ -28,13 +28,13 @@ Partial Class payrollsum
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Panel3 = New Panel()
+        RichTextBox1 = New RichTextBox()
         searchButton = New Button()
         searchTextBox = New TextBox()
         PictureBox1 = New PictureBox()
         DataGridView1 = New DataGridView()
         Button1 = New Button()
         PictureBox13 = New PictureBox()
-        RichTextBox1 = New RichTextBox()
         Panel3.SuspendLayout()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +56,15 @@ Partial Class payrollsum
         Panel3.Name = "Panel3"
         Panel3.Size = New Size(1763, 891)
         Panel3.TabIndex = 4
+        ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
+        RichTextBox1.Location = New Point(1122, 530)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.Size = New Size(432, 94)
+        RichTextBox1.TabIndex = 33
+        RichTextBox1.Text = ""
         ' 
         ' searchButton
         ' 
@@ -98,7 +107,7 @@ Partial Class payrollsum
         DataGridViewCellStyle1.SelectionBackColor = Color.SpringGreen
         DataGridViewCellStyle1.SelectionForeColor = Color.Red
         DataGridView1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
-        DataGridView1.BackgroundColor = Color.Gold
+        DataGridView1.BackgroundColor = Color.White
         DataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None
         DataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = Color.White
@@ -152,14 +161,6 @@ Partial Class payrollsum
         PictureBox13.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox13.TabIndex = 22
         PictureBox13.TabStop = False
-        ' 
-        ' RichTextBox1
-        ' 
-        RichTextBox1.Location = New Point(1122, 530)
-        RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(432, 258)
-        RichTextBox1.TabIndex = 33
-        RichTextBox1.Text = ""
         ' 
         ' payrollsum
         ' 
