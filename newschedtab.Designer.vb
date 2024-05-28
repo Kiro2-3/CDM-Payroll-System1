@@ -28,6 +28,7 @@ Partial Class newschedtab
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Panel4 = New Panel()
+        RichTextBox1 = New RichTextBox()
         searchButton = New Button()
         searchTextBox = New TextBox()
         PictureBox1 = New PictureBox()
@@ -48,6 +49,7 @@ Partial Class newschedtab
         ' 
         Panel4.BackColor = Color.Gold
         Panel4.BackgroundImageLayout = ImageLayout.Stretch
+        Panel4.Controls.Add(RichTextBox1)
         Panel4.Controls.Add(searchButton)
         Panel4.Controls.Add(searchTextBox)
         Panel4.Controls.Add(PictureBox1)
@@ -61,6 +63,15 @@ Partial Class newschedtab
         Panel4.Name = "Panel4"
         Panel4.Size = New Size(1532, 893)
         Panel4.TabIndex = 4
+        ' 
+        ' RichTextBox1
+        ' 
+        RichTextBox1.Font = New Font("Segoe UI", 15F)
+        RichTextBox1.Location = New Point(1089, 402)
+        RichTextBox1.Name = "RichTextBox1"
+        RichTextBox1.Size = New Size(258, 118)
+        RichTextBox1.TabIndex = 34
+        RichTextBox1.Text = ""
         ' 
         ' searchButton
         ' 
@@ -77,7 +88,7 @@ Partial Class newschedtab
         ' 
         ' searchTextBox
         ' 
-        searchTextBox.Font = New Font("Segoe UI", 22.0F)
+        searchTextBox.Font = New Font("Segoe UI", 22F)
         searchTextBox.Location = New Point(12, 70)
         searchTextBox.Name = "searchTextBox"
         searchTextBox.Size = New Size(197, 47)
@@ -89,7 +100,7 @@ Partial Class newschedtab
         PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
         PictureBox1.Location = New Point(356, 0)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(327, 105)
+        PictureBox1.Size = New Size(374, 105)
         PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox1.TabIndex = 26
         PictureBox1.TabStop = False
@@ -102,7 +113,7 @@ Partial Class newschedtab
         Button2.Image = CType(resources.GetObject("Button2.Image"), Image)
         Button2.Location = New Point(9, 767)
         Button2.Name = "Button2"
-        Button2.Size = New Size(1130, 50)
+        Button2.Size = New Size(1031, 50)
         Button2.TabIndex = 25
         Button2.UseVisualStyleBackColor = False
         ' 
@@ -114,7 +125,7 @@ Partial Class newschedtab
         Button1.Image = CType(resources.GetObject("Button1.Image"), Image)
         Button1.Location = New Point(9, 711)
         Button1.Name = "Button1"
-        Button1.Size = New Size(1130, 50)
+        Button1.Size = New Size(1031, 50)
         Button1.TabIndex = 24
         Button1.UseVisualStyleBackColor = False
         ' 
@@ -160,7 +171,7 @@ Partial Class newschedtab
         DataGridViewCellStyle4.WrapMode = DataGridViewTriState.True
         DataGridView1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         DataGridView1.RowHeadersWidth = 80
-        DataGridView1.Size = New Size(1130, 582)
+        DataGridView1.Size = New Size(1031, 582)
         DataGridView1.TabIndex = 23
         ' 
         ' Column4
@@ -172,7 +183,7 @@ Partial Class newschedtab
         ' 
         PictureBox13.BackColor = Color.Gold
         PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), Image)
-        PictureBox13.Location = New Point(1145, 123)
+        PictureBox13.Location = New Point(1089, 123)
         PictureBox13.Name = "PictureBox13"
         PictureBox13.Size = New Size(258, 236)
         PictureBox13.SizeMode = PictureBoxSizeMode.StretchImage
@@ -192,7 +203,7 @@ Partial Class newschedtab
         ' 
         ' newschedtab
         ' 
-        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
+        AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         BackColor = Color.Gold
         ClientSize = New Size(1532, 893)
@@ -219,4 +230,5 @@ Partial Class newschedtab
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents searchTextBox As TextBox
     Friend WithEvents searchButton As Button
+    Friend WithEvents RichTextBox1 As RichTextBox
 End Class

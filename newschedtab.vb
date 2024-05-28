@@ -68,7 +68,10 @@ Public Class newschedtab
 
     ' Event handler for CellContentClick event of DataGridView
     Private Sub DataGridView1_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellContentClick
-        ' Add your code here to handle cell click events if needed
+        If e.RowIndex >= 0 AndAlso e.ColumnIndex >= 0 Then
+            Dim clickedCellValue As String = DataGridView1.Rows(e.RowIndex).Cells(e.ColumnIndex).Value.ToString()
+            RichTextBox1.Text = clickedCellValue
+        End If
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
@@ -156,5 +159,13 @@ Public Class newschedtab
 
     Private Sub searchTextBox_TextChanged(sender As Object, e As EventArgs) Handles searchTextBox.TextChanged
         searchButton_Click(sender, e)
+    End Sub
+
+    Private Sub PictureBox15_Click(sender As Object, e As EventArgs) Handles PictureBox15.Click
+
+    End Sub
+
+    Private Sub RichTextBox1_TextChanged(sender As Object, e As EventArgs) Handles RichTextBox1.TextChanged
+
     End Sub
 End Class
