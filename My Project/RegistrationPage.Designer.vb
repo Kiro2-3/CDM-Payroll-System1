@@ -138,12 +138,13 @@ Partial Class RegistrationPage
         ' 
         Label2.AutoSize = True
         Label2.Font = New Font("Verdana", 36F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label2.Location = New Point(459, 111)
+        Label2.ForeColor = Color.Red
+        Label2.Location = New Point(186, 111)
         Label2.Margin = New Padding(10, 0, 3, 0)
         Label2.Name = "Label2"
-        Label2.Size = New Size(356, 59)
+        Label2.Size = New Size(872, 59)
         Label2.TabIndex = 3
-        Label2.Text = "Registration"
+        Label2.Text = "REGISTER AS ADMINISTRATOR"
         Label2.TextAlign = ContentAlignment.MiddleLeft
         ' 
         ' RegistrationTab
@@ -380,7 +381,7 @@ Partial Class RegistrationPage
         ' 
         DepartmentDropdown.Font = New Font("Verdana", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         DepartmentDropdown.FormattingEnabled = True
-        DepartmentDropdown.Location = New Point(251, 195)
+        DepartmentDropdown.Location = New Point(256, 195)
         DepartmentDropdown.Name = "DepartmentDropdown"
         DepartmentDropdown.Size = New Size(270, 31)
         DepartmentDropdown.TabIndex = 27
@@ -389,11 +390,12 @@ Partial Class RegistrationPage
         ' 
         Label9.AutoSize = True
         Label9.Font = New Font("Verdana", 14.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        Label9.Location = New Point(128, 198)
+        Label9.ForeColor = Color.Red
+        Label9.Location = New Point(53, 198)
         Label9.Name = "Label9"
-        Label9.Size = New Size(122, 23)
+        Label9.Size = New Size(197, 23)
         Label9.TabIndex = 26
-        Label9.Text = "Department"
+        Label9.Text = "Administrator Level"
         ' 
         ' Label13
         ' 
