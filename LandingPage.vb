@@ -251,4 +251,8 @@ Public Class LandingPage
     Private Sub PictureBox16_Click(sender As Object, e As EventArgs) Handles PictureBox16.Click
 
     End Sub
+
+    Private Sub Button7_Click(sender As Object, e As EventArgs) Handles Button7.Click
+        ShowFormInPanel8(message)
+    End Sub
 End Class
