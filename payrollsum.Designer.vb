@@ -28,6 +28,8 @@ Partial Class payrollsum
         Dim DataGridViewCellStyle3 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Dim DataGridViewCellStyle4 As DataGridViewCellStyle = New DataGridViewCellStyle()
         Panel3 = New Panel()
+        Label2 = New Label()
+        Button3 = New Button()
         Label1 = New Label()
         PictureBox4 = New PictureBox()
         Button2 = New Button()
@@ -40,7 +42,6 @@ Partial Class payrollsum
         DataGridView1 = New DataGridView()
         Button1 = New Button()
         PictureBox13 = New PictureBox()
-        Button3 = New Button()
         Panel3.SuspendLayout()
         CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
@@ -54,6 +55,7 @@ Partial Class payrollsum
         ' 
         Panel3.BackColor = Color.Gold
         Panel3.BackgroundImageLayout = ImageLayout.Stretch
+        Panel3.Controls.Add(Label2)
         Panel3.Controls.Add(Button3)
         Panel3.Controls.Add(Label1)
         Panel3.Controls.Add(PictureBox4)
@@ -69,8 +71,32 @@ Partial Class payrollsum
         Panel3.Controls.Add(PictureBox13)
         Panel3.Location = New Point(-149, -59)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(1763, 891)
+        Panel3.Size = New Size(1763, 923)
         Panel3.TabIndex = 4
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.BackColor = Color.White
+        Label2.Font = New Font("Segoe UI Symbol", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.ForeColor = Color.Red
+        Label2.Location = New Point(175, 288)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(118, 45)
+        Label2.TabIndex = 41
+        Label2.Text = "Label2"
+        ' 
+        ' Button3
+        ' 
+        Button3.BackColor = Color.Red
+        Button3.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Button3.ForeColor = Color.Yellow
+        Button3.Location = New Point(1122, 820)
+        Button3.Name = "Button3"
+        Button3.Size = New Size(416, 53)
+        Button3.TabIndex = 40
+        Button3.Text = "DELETE"
+        Button3.UseVisualStyleBackColor = False
         ' 
         ' Label1
         ' 
@@ -78,7 +104,7 @@ Partial Class payrollsum
         Label1.BackColor = Color.White
         Label1.Font = New Font("Segoe UI Symbol", 24F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.ForeColor = Color.Red
-        Label1.Location = New Point(175, 288)
+        Label1.Location = New Point(175, 228)
         Label1.Name = "Label1"
         Label1.Size = New Size(118, 45)
         Label1.TabIndex = 39
@@ -102,7 +128,7 @@ Partial Class payrollsum
         Button2.ForeColor = Color.Yellow
         Button2.Location = New Point(1122, 761)
         Button2.Name = "Button2"
-        Button2.Size = New Size(432, 53)
+        Button2.Size = New Size(416, 53)
         Button2.TabIndex = 36
         Button2.Text = "EDIT"
         Button2.UseVisualStyleBackColor = False
@@ -132,7 +158,7 @@ Partial Class payrollsum
         RichTextBox1.Font = New Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
         RichTextBox1.Location = New Point(1122, 530)
         RichTextBox1.Name = "RichTextBox1"
-        RichTextBox1.Size = New Size(432, 220)
+        RichTextBox1.Size = New Size(416, 220)
         RichTextBox1.TabIndex = 33
         RichTextBox1.Text = ""
         ' 
@@ -227,28 +253,16 @@ Partial Class payrollsum
         PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), Image)
         PictureBox13.Location = New Point(1122, 109)
         PictureBox13.Name = "PictureBox13"
-        PictureBox13.Size = New Size(432, 415)
+        PictureBox13.Size = New Size(416, 415)
         PictureBox13.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox13.TabIndex = 22
         PictureBox13.TabStop = False
-        ' 
-        ' Button3
-        ' 
-        Button3.BackColor = Color.Red
-        Button3.Font = New Font("Segoe UI Black", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Button3.ForeColor = Color.Yellow
-        Button3.Location = New Point(1122, 820)
-        Button3.Name = "Button3"
-        Button3.Size = New Size(432, 53)
-        Button3.TabIndex = 40
-        Button3.Text = "DELETE"
-        Button3.UseVisualStyleBackColor = False
         ' 
         ' payrollsum
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(1438, 832)
+        ClientSize = New Size(1438, 856)
         Controls.Add(Panel3)
         FormBorderStyle = FormBorderStyle.None
         Name = "payrollsum"
@@ -278,4 +292,5 @@ Partial Class payrollsum
     Friend WithEvents Button2 As Button
     Friend WithEvents Label1 As Label
     Friend WithEvents Button3 As Button
+    Friend WithEvents Label2 As Label
 End Class

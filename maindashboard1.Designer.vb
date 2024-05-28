@@ -25,78 +25,87 @@ Partial Class maindashboard1
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(maindashboard1))
         Panel3 = New Panel()
         PictureBox14 = New PictureBox()
+        PictureBox3 = New PictureBox()
+        PictureBox4 = New PictureBox()
         PictureBox1 = New PictureBox()
-        PictureBox13 = New PictureBox()
         PictureBox2 = New PictureBox()
         Panel3.SuspendLayout()
         CType(PictureBox14, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).BeginInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).BeginInit()
-        CType(PictureBox13, ComponentModel.ISupportInitialize).BeginInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
         ' Panel3
         ' 
-        Panel3.BackColor = Color.Gold
+        Panel3.BackColor = Color.White
         Panel3.BackgroundImageLayout = ImageLayout.Stretch
-        Panel3.Controls.Add(PictureBox14)
+        Panel3.Controls.Add(PictureBox2)
         Panel3.Controls.Add(PictureBox1)
+        Panel3.Controls.Add(PictureBox14)
+        Panel3.Controls.Add(PictureBox3)
+        Panel3.Controls.Add(PictureBox4)
         Panel3.Location = New Point(-131, -30)
         Panel3.Name = "Panel3"
-        Panel3.Size = New Size(1387, 815)
+        Panel3.Size = New Size(1570, 920)
         Panel3.TabIndex = 3
         ' 
         ' PictureBox14
         ' 
+        PictureBox14.BackColor = Color.Gold
         PictureBox14.Image = CType(resources.GetObject("PictureBox14.Image"), Image)
-        PictureBox14.Location = New Point(609, 42)
+        PictureBox14.Location = New Point(491, 24)
         PictureBox14.Name = "PictureBox14"
-        PictureBox14.Size = New Size(737, 161)
+        PictureBox14.Size = New Size(616, 131)
         PictureBox14.SizeMode = PictureBoxSizeMode.StretchImage
         PictureBox14.TabIndex = 23
         PictureBox14.TabStop = False
         ' 
+        ' PictureBox3
+        ' 
+        PictureBox3.BackColor = Color.Gold
+        PictureBox3.Location = New Point(-133, 24)
+        PictureBox3.Name = "PictureBox3"
+        PictureBox3.Size = New Size(1683, 131)
+        PictureBox3.TabIndex = 26
+        PictureBox3.TabStop = False
+        ' 
+        ' PictureBox4
+        ' 
+        PictureBox4.BackColor = Color.Gold
+        PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), Image)
+        PictureBox4.Location = New Point(123, 135)
+        PictureBox4.Name = "PictureBox4"
+        PictureBox4.Size = New Size(1614, 913)
+        PictureBox4.SizeMode = PictureBoxSizeMode.StretchImage
+        PictureBox4.TabIndex = 27
+        PictureBox4.TabStop = False
+        ' 
         ' PictureBox1
         ' 
-        PictureBox1.BackColor = Color.Gold
-        PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), Image)
-        PictureBox1.Location = New Point(125, 662)
+        PictureBox1.Location = New Point(0, 104)
         PictureBox1.Name = "PictureBox1"
-        PictureBox1.Size = New Size(170, 150)
-        PictureBox1.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox1.TabIndex = 24
+        PictureBox1.Size = New Size(100, 50)
+        PictureBox1.TabIndex = 28
         PictureBox1.TabStop = False
-        ' 
-        ' PictureBox13
-        ' 
-        PictureBox13.BackColor = Color.Gold
-        PictureBox13.Image = CType(resources.GetObject("PictureBox13.Image"), Image)
-        PictureBox13.Location = New Point(1204, 12)
-        PictureBox13.Name = "PictureBox13"
-        PictureBox13.Size = New Size(190, 171)
-        PictureBox13.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox13.TabIndex = 22
-        PictureBox13.TabStop = False
         ' 
         ' PictureBox2
         ' 
-        PictureBox2.BackColor = Color.Gold
-        PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), Image)
-        PictureBox2.Location = New Point(1224, 635)
+        PictureBox2.Image = My.Resources.Resources.Screenshot_2024_05_28_104806
+        PictureBox2.Location = New Point(137, 161)
         PictureBox2.Name = "PictureBox2"
-        PictureBox2.Size = New Size(170, 150)
+        PictureBox2.Size = New Size(627, 398)
         PictureBox2.SizeMode = PictureBoxSizeMode.StretchImage
-        PictureBox2.TabIndex = 25
+        PictureBox2.TabIndex = 29
         PictureBox2.TabStop = False
         ' 
         ' maindashboard1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        BackColor = Color.Gold
-        ClientSize = New Size(1386, 781)
-        Controls.Add(PictureBox2)
-        Controls.Add(PictureBox13)
+        BackColor = Color.White
+        ClientSize = New Size(1411, 880)
         Controls.Add(Panel3)
         ForeColor = Color.Gold
         FormBorderStyle = FormBorderStyle.None
@@ -104,15 +113,17 @@ Partial Class maindashboard1
         Text = "maindashboard1"
         Panel3.ResumeLayout(False)
         CType(PictureBox14, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox3, ComponentModel.ISupportInitialize).EndInit()
+        CType(PictureBox4, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox1, ComponentModel.ISupportInitialize).EndInit()
-        CType(PictureBox13, ComponentModel.ISupportInitialize).EndInit()
         CType(PictureBox2, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
     End Sub
 
     Friend WithEvents Panel3 As Panel
+    Friend WithEvents PictureBox3 As PictureBox
+    Friend WithEvents PictureBox4 As PictureBox
     Friend WithEvents PictureBox14 As PictureBox
-    Friend WithEvents PictureBox13 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox2 As PictureBox
+    Friend WithEvents PictureBox1 As PictureBox
 End Class

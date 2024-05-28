@@ -49,6 +49,7 @@ Public Class payrollsum
 
                         ' Update Label1 with the count of payroll records
                         Label1.Text = "There are currently " & DataTable1.Rows.Count.ToString() & " payroll records!"
+                        Label2.Text = " Today is " & DateTime.Now.ToString("dddd, MMMM dd, yyyy")
                     Else
                         MessageBox.Show("No data found.")
                     End If
